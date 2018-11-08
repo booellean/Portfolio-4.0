@@ -1,15 +1,28 @@
+/*========================= Styles for Global tags such as HTML and Body =========================*/
+
+/*courtesy of Rimian and Alex Guerrero, July 1, 2013, from https://stackoverflow.com/questions/12788262/sass-browser-vendor-prefixes#17399532
+/* ~~ vendor prefix formula ~~ */
+
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
 /*Primary Universal Styles for App*/
 
 *{
-  box-sizing: border-box;
+  @include vendor-prefix('box-sizing', 'border-box');
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 html, body{
   width: 100%;
   max-width: 100%;
-  overflow: auto;
+  height: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
+
+html{ overflow: hidden; }
