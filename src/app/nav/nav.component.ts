@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AppComponent } from '../app.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  page: string;
+
+  @Input() iState: AppComponent;
+  @Input() dState: AppComponent;
+  @Input() wState: AppComponent;
+  @Input() aState: AppComponent;
+
+  @Output() changeBoolean = new EventEmitter<string>();
+
+  constructor() {}
 
   ngOnInit() {
+  }
+
+  onOpenPage(page: string){
+    this.page = page;
+    this.changeBoolean.emit(this.page);
   }
 
 }

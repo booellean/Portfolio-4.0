@@ -9,6 +9,8 @@ import { IllustrationComponent } from './illustration/illustration.component';
 import { WebdevComponent } from './webdev/webdev.component';
 import { DesignComponent } from './design/design.component';
 import { AboutComponent } from './about/about.component';
+import { MainComponent } from './main/main.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,16 @@ import { AboutComponent } from './about/about.component';
     IllustrationComponent,
     WebdevComponent,
     DesignComponent,
-    AboutComponent
+    AboutComponent,
+    MainComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

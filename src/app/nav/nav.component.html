@@ -1,3 +1,10 @@
-<p>
-  nav works!
-</p>
+<nav>
+  <a  id="nav-illustration" [ngClass]="iState ? 'comic-open' : 'comic-closed'"
+      (click)="onOpenPage('illustration')">Illustration</a>
+  <a  id="nav-design" [ngClass]="dState ? 'comic-open' : 'comic-closed'"
+      (click)="onOpenPage('design')">Design</a>
+  <a  id="nav-webdev" [ngClass]="wState ? 'comic-open' : 'comic-closed'"
+      (click)="onOpenPage('webdev')">WebDev</a>
+  <a  id="nav-about" [ngClass]="aState ? 'comic-open' : 'comic-closed'"
+      (click)="onOpenPage('about')">About</a>
+</nav>

@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/*Primary Universal Styles for App*/
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html, body{
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
