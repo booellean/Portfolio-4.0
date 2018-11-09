@@ -15,6 +15,7 @@ export class NavComponent implements OnInit {
   @Input() dState: AppComponent;
   @Input() wState: AppComponent;
   @Input() aState: AppComponent;
+  @Input() nState: AppComponent;
 
   @Output() changeBoolean = new EventEmitter<string>();
 

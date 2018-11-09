@@ -9,42 +9,71 @@ import { Component, forwardRef } from '@angular/core';
 export class AppComponent {
   title = 'Elle Pope';
 
-  public iState: boolean = false;
-  public dState: boolean = false;
-  public wState: boolean = false;
-  public aState: boolean = false;
+  public iState: boolean = false; //illustration section is closed or cropped
+  public dState: boolean = false; //design section is closed or cropped
+  public wState: boolean = false; //webdev section is closed or cropped
+  public aState: boolean = false; //about section is closed or cropped
+  public nState: boolean = true; //navbar is open
 
   onChangeBoolean(page: string){
     switch(page){
+      case 'hamburger-action':
+        if(this.nState){
+          this.iState = false;
+          this.dState = false;
+          this.wState = false;
+          this.aState = false;
+          this.nState = false;
+        }else{
+          this.iState = false;
+          this.dState = false;
+          this.wState = false;
+          this.aState = false;
+          this.nState = true;
+        }
+        break;
       case 'illustration':
         this.iState = true;
         this.dState = false;
         this.wState = false;
         this.aState = false;
+        setTimeout( ()=>{
+          this.nState = false;
+        }, 1000); //Allows animation to play through before closing
         break;
       case 'design':
         this.iState = false;
         this.dState = true;
         this.wState = false;
         this.aState = false;
+        setTimeout( ()=>{
+          this.nState = false;
+        }, 1000); //Allows animation to play through before closing
         break;
       case 'webdev':
         this.iState = false;
         this.dState = false;
         this.wState = true;
         this.aState = false;
+        setTimeout( ()=>{
+          this.nState = false;
+        }, 1000); //Allows animation to play through before closing
         break;
       case 'about':
         this.iState = false;
         this.dState = false;
         this.wState = false;
         this.aState = true;
+        setTimeout( ()=>{
+          this.nState = false;
+        }, 1000); //Allows animation to play through before closing
         break;
       default:
         this.iState = false;
         this.dState = false;
         this.wState = false;
         this.aState = false;
+        this.nState = true;
     }
   }
 }

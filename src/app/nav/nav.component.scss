@@ -1,0 +1,159 @@
+/*====================== Nav and Link classes, Animations, and Transitions ======================*/
+
+/* ~~variables ~~ */
+$bg-color: #4a4c5e;
+$menu-open-color: white;
+$menu-close-color: black;
+
+/*courtesy of Rimian and Alex Guerrero, July 1, 2013, from https://stackoverflow.com/questions/12788262/sass-browser-vendor-prefixes#17399532
+/* ~~ vendor prefix formula ~~ */
+
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+/*======================= Hamburger menu behaviors, spans, and Animations =======================*/
+
+#menu-toggler{
+  width: 2rem;
+  height: 2.5rem;
+  position: fixed;
+  top: 1em;
+  right: 0.7em;
+  @include vendor-prefix('transform', 'rotate(0deg)');
+  @include vendor-prefix('transition', 'all .5s ease-in-out');
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#menu-toggler span{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 6px;
+  opacity: 1;
+  @include vendor-prefix('transform', 'rotate(0deg)');
+  @include vendor-prefix('transition', 'all .25s ease-in-out');
+  background-color: $menu-close-color;
+}
+
+#menu-toggler span:nth-child(1){ top: 0; }
+#menu-toggler span:nth-child(2){ top: 8px; }
+#menu-toggler span:nth-child(3){ top: 16px; }
+
+#menu-toggler.hamburger-open span:nth-child(1) {
+  top: 8px;
+  @include vendor-prefix('transform', 'rotate(135deg)');
+  background-color: $menu-open-color;
+}
+
+#menu-toggler.hamburger-open span:nth-child(2){
+  opacity: 0;
+  left: -30px;
+  background-color: $menu-open-color;
+}
+
+#menu-toggler.hamburger-open span:nth-child(3){
+  top: 8px;
+  @include vendor-prefix('transform', 'rotate(-135deg)');
+  background-color: $menu-open-color;
+}
+
+/*================================= Nav Properties and Behaviors ================================*/
+
+nav{
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  background-color: $bg-color;
+}
+
+.nav-open{
+  opacity: 1;
+  border-radius: 0%;
+  @include vendor-prefix('transition', 'opacity .1s ease-out, border-radius .2s linear, transform .2s linear, width .2s linear, height .2s linear, right .2s linear, top .2s linear');
+}
+
+.nav-closed{
+  opacity: 0;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  top: .5em;
+  right: 5em;
+  pointer-events: none;
+  @include vendor-prefix('transition', 'opacity .4s ease-out, border-radius .2s linear .4s, transform .2s linear .4s, width .2s linear .4s, height .2s linear .4s, right .2s linear .4s, top .2s linear .4s');
+}
+
+nav>a{
+  display: inline-block;
+  position: fixed;
+  background-image: url('../../assets/test.jpg');
+  background-size: 100vw;
+  background-attachment: fixed;
+}
+
+/*Minor Variance of transitions from opened and closed nav section anchors*/
+nav>a.comic-open{ @include vendor-prefix('transition','height .3s linear, width .3s linear, clip-path .5s ease-in-out'); }
+nav>a.comic-closed{ @include vendor-prefix('transition','height .3s linear .3s, width .3s linear .3s, clip-path .5s ease-in-out .3s'); }
+
+#nav-webdev{
+  top: 0;
+  left: 0;
+}
+
+.comic-closed:nth-child(1){ /* #nav-webdev style */
+  clip-path: polygon(0% 0%, 96% 0%, 96% 90%, 0% 85%);
+  width: 60%;
+  height: 60%;
+  z-index: 4;
+}
+
+#nav-design{
+  top: 0;
+  right: 0;
+}
+
+.comic-closed:nth-child(2){ /* #nav-design style */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 94%, 0% 90%);
+  width: 40%;
+  height: 60%;
+  z-index: 3;
+}
+
+#nav-about{
+  bottom: 0;
+  left: 0;
+}
+
+.comic-closed:nth-child(3){ /* #nav-about style */
+  clip-path: polygon(0% 1%, 100% 5%, 100% 100%, 0% 100%);
+  width: 35%;
+  height: 46%;
+  z-index: 2;
+}
+
+#nav-illustration{
+  bottom: 0;
+  right: 0;
+}
+
+.comic-closed:nth-child(4){ /* #nav-illustration style */
+  clip-path: polygon(5% 3%, 100% 10%, 100% 100%, 5% 100%);
+  width: 65%;
+  height: 45%;
+  z-index: 1;
+}
+
+.comic-open{
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
