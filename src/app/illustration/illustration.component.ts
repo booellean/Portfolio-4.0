@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 
 @Component({
   selector: 'app-illustration',

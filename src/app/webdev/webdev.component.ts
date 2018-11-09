@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 
 @Component({
   selector: 'app-webdev',
