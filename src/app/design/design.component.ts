@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import { MainComponent } from '../main/main.component';
 
 @Component({
   selector: 'app-design',
@@ -20,6 +21,15 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
     ])]//end trigger //end animation
 })
 export class DesignComponent implements OnInit {
+
+  @Input() lState: MainComponent;
+  @Input() lObject: MainComponent;
+
+  @Output() changeLightBox = new EventEmitter<string>();
+
+  onLightBox(lObject){
+    this.changeLightBox.emit(lObject);
+  }
 
   imagePath = '../../assets/images/design/';
 

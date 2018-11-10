@@ -2,8 +2,8 @@
     <h3>Inks</h3>
     <section id="sec-i-inks" class="collection-container">
         <div class  = "preview-container"
-            *ngFor  = "let ink of inks"
-            (click) = "onLightBox(ink.name)">
+            *ngFor  = "let ink of inks; let i = index"
+            (click) = "onLightBox(ink)">
             <figure class = "preview-image">
               <img  alt   = "{{ink.alt}}"
                     id    = "{{ink.name}}"
@@ -25,8 +25,8 @@
       <h3>BW Doodles</h3>
       <section id="sec-i-doodles" class="collection-container">
         <div class  = "preview-container"
-            *ngFor  = "let doodle of doodles"
-            (click) = "onLightBox(doodle.name)">
+            *ngFor  = "let doodle of doodles; let i = index"
+            (click) = "onLightBox(doodle)">
             <figure class = "preview-image">
               <img  alt   = "{{doodle.alt}}"
                     id    = "{{doodle.name}}"
@@ -48,8 +48,8 @@
       <h3>Color Doodles</h3>
       <section id="sec-i-pencils" class="collection-container">
           <div class  = "preview-container"
-              *ngFor  = "let pencil of colorPencil"
-              (click) = "onLightBox(pencil.name)">
+              *ngFor  = "let pencil of colorPencil; let i = index"
+              (click) = "onLightBox(pencil)">
               <figure class="preview-image">
                 <img  alt="{{pencil.alt}}"
                       id="{{pencil.name}}"
@@ -71,8 +71,8 @@
         <h3>Character Studies</h3>
         <section id="sec-i-characters" class="collection-container">
             <div class  = "preview-container"
-                *ngFor  = "let study of characterStudy"
-                (click) = "onLightBox(study.name)">
+                *ngFor  = "let study of characterStudy; let i = index"
+                (click) = "onLightBox(study)">
                 <figure class = "preview-image">
                   <img  alt   = "{{study.alt}}"
                         id    = "{{study.name}}"

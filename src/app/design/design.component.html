@@ -2,8 +2,8 @@
     <h3>Logos</h3>
     <section id="sic-d-logos" class="collection-container">
         <div class  = "preview-container"
-            *ngFor  = "let logo of logos"
-            (click) = "onLightBox(logo.name)">
+            *ngFor  = "let logo of logos; let i = index"
+            (click) = "onLightBox(logo)">
             <figure class = "preview-image">
               <img  alt   = "{{logo.alt}}"
                     id    = "{{logo.name}}"
@@ -25,8 +25,8 @@
       <h3>Banners</h3>
       <section id="sic-d-banners" class="collection-container">
         <div class  = "preview-container"
-            *ngFor  = "let banner of banners"
-            (click) = "onLightBox(banner.name)">
+            *ngFor  = "let banner of banners; let i = index"
+            (click) = "onLightBox(banner)">
             <figure class = "preview-image">
               <img  alt   = "{{banner.alt}}"
                     id    = "{{banner.name}}"
@@ -48,8 +48,8 @@
       <h3>Icons</h3>
       <section id="sic-d-icons" class="collection-container">
           <div class  = "preview-container"
-              *ngFor  = "let icon of icons"
-              (click) = "onLightBox(icon.name)">
+              *ngFor  = "let icon of icons; let i = index"
+              (click) = "onLightBox(icon)">
               <figure class="preview-image">
                 <img  alt="{{icon.alt}}"
                       id="{{icon.name}}"
@@ -71,8 +71,8 @@
         <h3>Layouts</h3>
         <section id="sic-d-characters" class="collection-container">
             <div class  = "preview-container"
-                *ngFor  = "let layout of layouts"
-                (click) = "onLightBox(layout.name)">
+                *ngFor  = "let layout of layouts; let i = index"
+                (click) = "onLightBox(layout)">
                 <figure class = "preview-image">
                   <img  alt   = "{{layout.alt}}"
                         id    = "{{layout.name}}"
