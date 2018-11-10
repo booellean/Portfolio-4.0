@@ -1,3 +1,94 @@
-<p>
-  illustration works!
-</p>
+<article [@preview-container]="doodles.length+inks.length+colorPencil.length+characterStudy.length">
+    <h3>Inks</h3>
+    <section id="sec-i-inks" class="collection-container">
+        <div class  = "preview-container"
+            *ngFor  = "let ink of inks"
+            (click) = "onLightBox(ink.name)">
+            <figure class = "preview-image">
+              <img  alt   = "{{ink.alt}}"
+                    id    = "{{ink.name}}"
+                    srcset="{{imagePath}}{{ink.name}}-200{{ink.fileType}} 400w,
+                            {{imagePath}}{{ink.name}}-400{{ink.fileType}} 600w,
+                            {{imagePath}}{{ink.name}}-600{{ink.fileType}} 800w,
+                            {{imagePath}}{{ink.name}}-800{{ink.fileType}} 1000w,
+                            {{imagePath}}{{ink.name}}-1100{{ink.fileType}}"
+                    sizes="(max-width: 300px) 200px,
+                          (max-width: 400px) 400px,
+                          (max-width: 600px) 600px,
+                          (max-width: 800px) 800px,
+                          1100px"
+                    src="{{imagePath}}{{ink.name}}-1100{{ink.fileType}}"
+                    data-name="{{ink.show}}">
+                </figure>
+        </div>
+      </section>
+      <h3>BW Doodles</h3>
+      <section id="sec-i-doodles" class="collection-container">
+        <div class  = "preview-container"
+            *ngFor  = "let doodle of doodles"
+            (click) = "onLightBox(doodle.name)">
+            <figure class = "preview-image">
+              <img  alt   = "{{doodle.alt}}"
+                    id    = "{{doodle.name}}"
+                    srcset="{{imagePath}}{{doodle.name}}-200{{doodle.fileType}} 400w,
+                            {{imagePath}}{{doodle.name}}-400{{doodle.fileType}} 600w,
+                            {{imagePath}}{{doodle.name}}-600{{doodle.fileType}} 800w,
+                            {{imagePath}}{{doodle.name}}-800{{doodle.fileType}} 1000w,
+                            {{imagePath}}{{doodle.name}}-1100{{doodle.fileType}}"
+                    sizes="(max-width: 300px) 200px,
+                          (max-width: 400px) 400px,
+                          (max-width: 600px) 600px,
+                          (max-width: 800px) 800px,
+                          1100px"
+                    src="{{imagePath}}{{doodle.name}}-1100{{doodle.fileType}}"
+                    data-name="{{doodle.show}}">
+                </figure>
+        </div>
+      </section>
+      <h3>Color Doodles</h3>
+      <section id="sec-i-pencils" class="collection-container">
+          <div class  = "preview-container"
+              *ngFor  = "let pencil of colorPencil"
+              (click) = "onLightBox(pencil.name)">
+              <figure class="preview-image">
+                <img  alt="{{pencil.alt}}"
+                      id="{{pencil.name}}"
+                      srcset="{{imagePath}}{{pencil.name}}-200{{pencil.fileType}} 400w,
+                              {{imagePath}}{{pencil.name}}-400{{pencil.fileType}} 600w,
+                              {{imagePath}}{{pencil.name}}-600{{pencil.fileType}} 800w,
+                              {{imagePath}}{{pencil.name}}-800{{pencil.fileType}} 1000w,
+                              {{imagePath}}{{pencil.name}}-1100{{pencil.fileType}}"
+                      sizes="(max-width: 300px) 200px,
+                            (max-width: 400px) 400px,
+                            (max-width: 600px) 600px,
+                            (max-width: 800px) 800px,
+                            1100px"
+                      src="{{imagePath}}{{pencil.name}}-1100{{pencil.fileType}}"
+                      data-name="{{pencil.show}}">
+                  </figure>
+          </div>
+        </section>
+        <h3>Character Studies</h3>
+        <section id="sec-i-characters" class="collection-container">
+            <div class  = "preview-container"
+                *ngFor  = "let study of characterStudy"
+                (click) = "onLightBox(study.name)">
+                <figure class = "preview-image">
+                  <img  alt   = "{{study.alt}}"
+                        id    = "{{study.name}}"
+                        srcset="{{imagePath}}{{study.name}}-200{{study.fileType}} 400w,
+                                {{imagePath}}{{study.name}}-400{{study.fileType}} 600w,
+                                {{imagePath}}{{study.name}}-600{{study.fileType}} 800w,
+                                {{imagePath}}{{study.name}}-800{{study.fileType}} 1000w,
+                                {{imagePath}}{{study.name}}-1100{{study.fileType}}"
+                        sizes="(max-width: 300px) 200px,
+                              (max-width: 400px) 400px,
+                              (max-width: 600px) 600px,
+                              (max-width: 800px) 800px,
+                              1100px"
+                        src="{{imagePath}}{{study.name}}-1100{{study.fileType}}"
+                        data-name="{{study.show}}">
+                    </figure>
+            </div>
+          </section>
+</article>
