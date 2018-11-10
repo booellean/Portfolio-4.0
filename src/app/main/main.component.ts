@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
   @Input() dState: AppComponent;
   @Input() wState: AppComponent;
   @Input() aState: AppComponent;
+  @Input() lState: AppComponent;
 
   constructor() {}
 
