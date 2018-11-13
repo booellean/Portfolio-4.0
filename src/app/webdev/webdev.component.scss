@@ -58,9 +58,9 @@ $sbheight: 50.625vw;
     }
   }
   div:hover{
-    @include vendor-prefix('transform', 'scale(1.05, 1.05)' );
     figure{
       @include vendor-prefix('box-shadow', '0 0 0.3rem 0rem rgba(0, 0, 0, 0.2)');
+      @include vendor-prefix('transform', 'scale(1.05, 1.05)' );
     }
   }
 }
@@ -69,7 +69,7 @@ $sbheight: 50.625vw;
   .web-collection-container{
     div{
       width: $lbwidth;
-      height: $lbheight;
+      height: auto;
     }
   }
 }
@@ -78,7 +78,7 @@ $sbheight: 50.625vw;
   .web-collection-container{
     div{
       width: $mbwidth;
-      height: $mbheight;
+      height: auto;
     }
   }
 }
@@ -87,7 +87,7 @@ $sbheight: 50.625vw;
   .web-collection-container{
     div{
       width: $sbwidth;
-      height: $sbheight;
+      height: auto;
     }
   }
 }
