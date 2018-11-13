@@ -25,7 +25,7 @@ $sbsize: 90vw;
   @include vendor-prefix('transform', 'rotate(0deg)');
   @include vendor-prefix('transition', 'all .5s ease-in-out');
   cursor: pointer;
-  z-index: 9999;
+  z-index: 999999;
   opacity: 0;
   pointer-events: none;
 }
@@ -91,6 +91,11 @@ $sbsize: 90vw;
         object-position: center center;
       }
     }
+    figcaption{
+      display: flex;
+      flex-flow: column nowrap;
+      font-size: 5em;
+    }
   }
   .lbclosed{
     figcaption{
@@ -99,10 +104,10 @@ $sbsize: 90vw;
   }
   .lbopen{
     position: fixed;
-    width: 90vw;
-    height: 90vh;
-    bottom: 5vh;
-    right: 5vw;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0vh;
+    right: 0vw;
     z-index: 999999;
     background-color: #efefef;
     figure{
@@ -120,6 +125,8 @@ $sbsize: 90vw;
     figcaption{
       width: 30%;
       height: 100%;
+      align-items: flex-end;
+      justify-content: space-between;
     }
   }
   .tall{
@@ -135,8 +142,10 @@ $sbsize: 90vw;
     }
     figcaption{
       width: 100%;
-      height: auto;
+      height: 30%;
       overflow: auto;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
