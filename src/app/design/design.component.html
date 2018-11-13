@@ -1,35 +1,45 @@
-<article [@preview-container]="banners.length+logos.length+icons.length+layouts.length">
+<article [@preview-container]="banners.length+logos.length+icons.length+layouts.length" (window:resize)="onResize($event)">
     <h3>Logos</h3>
-    <section id="sic-d-logos" class="collection-container">
-        <div class  = "preview-container"
-            *ngFor  = "let logo of logos; let i = index"
-            (click) = "onLightBox(logo)">
-            <figure class = "preview-image">
-              <img  alt   = "{{logo.alt}}"
-                    id    = "{{logo.name}}"
-                    srcset="{{imagePath}}{{logo.name}}-200{{logo.fileType}} 400w,
-                            {{imagePath}}{{logo.name}}-400{{logo.fileType}} 600w,
-                            {{imagePath}}{{logo.name}}-600{{logo.fileType}} 800w,
-                            {{imagePath}}{{logo.name}}-800{{logo.fileType}} 1000w,
-                            {{imagePath}}{{logo.name}}-1100{{logo.fileType}}"
-                    sizes="(max-width: 300px) 200px,
-                          (max-width: 400px) 400px,
-                          (max-width: 600px) 600px,
-                          (max-width: 800px) 800px,
-                          1100px"
-                    src="{{imagePath}}{{logo.name}}-1100{{logo.fileType}}"
-                    data-name="{{logo.show}}">
-                </figure>
-        </div>
-      </section>
+    <section id="sec-i-logos" class="collection-container">
+      <div id="div_logo_{{i}}"
+          class  = "lbclosed"
+          *ngFor  = "let logo of logos; let i = index"
+          (click) = "onLightBox('logo_' + i)">
+          <figure class = "preview-image"
+                  id = "figure_logo_{{i}}">
+            <img  alt   = "{{logo.alt}}"
+                  id    = "img_logo_{{i}}"
+                  srcset="{{imagePath}}{{logo.name}}-200{{logo.fileType}} 400w,
+                          {{imagePath}}{{logo.name}}-400{{logo.fileType}} 600w,
+                          {{imagePath}}{{logo.name}}-600{{logo.fileType}} 800w,
+                          {{imagePath}}{{logo.name}}-800{{logo.fileType}} 1000w,
+                          {{imagePath}}{{logo.name}}-1100{{logo.fileType}}"
+                  sizes="(max-width: 300px) 200px,
+                        (max-width: 400px) 400px,
+                        (max-width: 600px) 600px,
+                        (max-width: 800px) 800px,
+                        1100px"
+                  src="{{imagePath}}{{logo.name}}-1100{{logo.fileType}}"
+                  data-name="{{logo.show}}">
+              </figure>
+              <figcaption
+                  id = "figcaption_logo_{{i}}">
+                  <h2>{{logo.title}}</h2>
+                  <p>{{logo.description}}</p>
+                  <small>{{logo.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+              </figcaption>
+      </div>
+    </section>
       <h3>Banners</h3>
-      <section id="sic-d-banners" class="collection-container">
-        <div class  = "preview-container"
+      <section id="sec-i-banners" class="collection-container">
+        <div id="div_banner_{{i}}"
+            class  = "lbclosed"
             *ngFor  = "let banner of banners; let i = index"
-            (click) = "onLightBox(banner)">
-            <figure class = "preview-image">
+            (click) = "onLightBox('banner_' + i)">
+            <figure class = "preview-image"
+                    id = "figure_banner_{{i}}">
               <img  alt   = "{{banner.alt}}"
-                    id    = "{{banner.name}}"
+                    id    = "img_banner_{{i}}"
                     srcset="{{imagePath}}{{banner.name}}-200{{banner.fileType}} 400w,
                             {{imagePath}}{{banner.name}}-400{{banner.fileType}} 600w,
                             {{imagePath}}{{banner.name}}-600{{banner.fileType}} 800w,
@@ -43,52 +53,79 @@
                     src="{{imagePath}}{{banner.name}}-1100{{banner.fileType}}"
                     data-name="{{banner.show}}">
                 </figure>
+                <figcaption
+                    id = "figcaption_banner_{{i}}">
+                    <h2>{{banner.title}}</h2>
+                    <p>{{banner.description}}</p>
+                    <small>{{banner.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                </figcaption>
         </div>
       </section>
       <h3>Icons</h3>
-      <section id="sic-d-icons" class="collection-container">
-          <div class  = "preview-container"
-              *ngFor  = "let icon of icons; let i = index"
-              (click) = "onLightBox(icon)">
-              <figure class="preview-image">
-                <img  alt="{{icon.alt}}"
-                      id="{{icon.name}}"
-                      srcset="{{imagePath}}{{icon.name}}-200{{icon.fileType}} 400w,
-                              {{imagePath}}{{icon.name}}-400{{icon.fileType}} 600w,
-                              {{imagePath}}{{icon.name}}-600{{icon.fileType}} 800w,
-                              {{imagePath}}{{icon.name}}-800{{icon.fileType}} 1000w,
-                              {{imagePath}}{{icon.name}}-1100{{icon.fileType}}"
+      <section id="sec-i-icons" class="collection-container">
+        <div id="div_icon_{{i}}"
+            class  = "lbclosed"
+            *ngFor  = "let icon of icons; let i = index"
+            (click) = "onLightBox('icon_' + i)">
+            <figure class = "preview-image"
+                    id = "figure_icon_{{i}}">
+              <img  alt   = "{{icon.alt}}"
+                    id    = "img_icon_{{i}}"
+                    srcset="{{imagePath}}{{icon.name}}-200{{icon.fileType}} 400w,
+                            {{imagePath}}{{icon.name}}-400{{icon.fileType}} 600w,
+                            {{imagePath}}{{icon.name}}-600{{icon.fileType}} 800w,
+                            {{imagePath}}{{icon.name}}-800{{icon.fileType}} 1000w,
+                            {{imagePath}}{{icon.name}}-1100{{icon.fileType}}"
+                    sizes="(max-width: 300px) 200px,
+                          (max-width: 400px) 400px,
+                          (max-width: 600px) 600px,
+                          (max-width: 800px) 800px,
+                          1100px"
+                    src="{{imagePath}}{{icon.name}}-1100{{icon.fileType}}"
+                    data-name="{{icon.show}}">
+                </figure>
+                <figcaption
+                    id = "figcaption_icon_{{i}}">
+                    <h2>{{icon.title}}</h2>
+                    <p>{{icon.description}}</p>
+                    <small>{{icon.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                </figcaption>
+        </div>
+      </section>
+        <h3>Layouts</h3>
+        <section id="sec-i-layouts" class="collection-container">
+          <div id="div_layout_{{i}}"
+              class  = "lbclosed"
+              *ngFor  = "let layout of layouts; let i = index"
+              (click) = "onLightBox('layout_' + i)">
+              <figure class = "preview-image"
+                      id = "figure_layout_{{i}}">
+                <img  alt   = "{{layout.alt}}"
+                      id    = "img_layout_{{i}}"
+                      srcset="{{imagePath}}{{layout.name}}-200{{layout.fileType}} 400w,
+                              {{imagePath}}{{layout.name}}-400{{layout.fileType}} 600w,
+                              {{imagePath}}{{layout.name}}-600{{layout.fileType}} 800w,
+                              {{imagePath}}{{layout.name}}-800{{layout.fileType}} 1000w,
+                              {{imagePath}}{{layout.name}}-1100{{layout.fileType}}"
                       sizes="(max-width: 300px) 200px,
                             (max-width: 400px) 400px,
                             (max-width: 600px) 600px,
                             (max-width: 800px) 800px,
                             1100px"
-                      src="{{imagePath}}{{icon.name}}-1100{{icon.fileType}}"
-                      data-name="{{icon.show}}">
+                      src="{{imagePath}}{{layout.name}}-1100{{layout.fileType}}"
+                      data-name="{{layout.show}}">
                   </figure>
+                  <figcaption
+                      id = "figcaption_layout_{{i}}">
+                      <h2>{{layout.title}}</h2>
+                      <p>{{layout.description}}</p>
+                      <small>{{layout.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                  </figcaption>
           </div>
         </section>
-        <h3>Layouts</h3>
-        <section id="sic-d-characters" class="collection-container">
-            <div class  = "preview-container"
-                *ngFor  = "let layout of layouts; let i = index"
-                (click) = "onLightBox(layout)">
-                <figure class = "preview-image">
-                  <img  alt   = "{{layout.alt}}"
-                        id    = "{{layout.name}}"
-                        srcset="{{imagePath}}{{layout.name}}-200{{layout.fileType}} 400w,
-                                {{imagePath}}{{layout.name}}-400{{layout.fileType}} 600w,
-                                {{imagePath}}{{layout.name}}-600{{layout.fileType}} 800w,
-                                {{imagePath}}{{layout.name}}-800{{layout.fileType}} 1000w,
-                                {{imagePath}}{{layout.name}}-1100{{layout.fileType}}"
-                        sizes="(max-width: 300px) 200px,
-                              (max-width: 400px) 400px,
-                              (max-width: 600px) 600px,
-                              (max-width: 800px) 800px,
-                              1100px"
-                        src="{{imagePath}}{{layout.name}}-1100{{layout.fileType}}"
-                        data-name="{{layout.show}}">
-                    </figure>
-            </div>
-          </section>
 </article>
+<div id="image-toggler" [ngClass]="menu ? 'image-open' : ''" (click)="closeLightBox()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>

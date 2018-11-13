@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostListener} from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
-import { MainComponent } from '../main/main.component';
 
 @Component({
   selector: 'app-illustration',
@@ -22,13 +21,63 @@ import { MainComponent } from '../main/main.component';
 })
 export class IllustrationComponent implements OnInit {
 
-  @Input() lState: MainComponent;
-  @Input() lObject: MainComponent;
+  //listen to the window resizing
+  @HostListener('window:resize', ['$event'])
 
-  @Output() changeLightBox = new EventEmitter<string>();
+  //elements of image boxes, to convert to full lightbox display
+  dID: Element;
+  iID: Element;
+  fID: Element;
+  cID: Element;
 
-  onLightBox(lObject){
-    this.changeLightBox.emit(lObject);
+  imgRatio: number;
+  winRatio: number;
+  menu: boolean;
+
+  onLightBox(elID: string){
+    console.log(elID);
+    this.menu = true;
+    this.dID = <HTMLDivElement>document.getElementById('div_'+elID);
+    this.iID = <HTMLImageElement>document.getElementById('img_'+elID);
+
+    this.imgRatio = (this.findRatio(this.iID.clientWidth, this.iID.clientHeight)) + 0.5; //adding amount calculated for wide figcaption
+    this.winRatio = this.findRatio(window.innerWidth, window.innerHeight);
+
+    this.dID.classList.remove('lbclosed');
+    this.dID.classList.add('lbopen');
+
+    if(this.winRatio > this.imgRatio){
+      this.dID.classList.add('wide');
+    }else{
+      this.dID.classList.add('tall');
+    }
+    // console.log(this.imgRatio, this.winRatio);
+  }
+
+  closeLightBox(){
+    this.menu= false;
+
+    this.dID.classList.remove('lbopen');
+    this.dID.classList.remove('wide');
+    this.dID.classList.remove('tall');
+    this.dID.classList.add('lbclosed');
+  }
+
+  onResize(event){
+    this.winRatio = this.findRatio(window.innerWidth, window.innerHeight);
+    // console.log(this.imgRatio, this.winRatio);
+    if(this.winRatio > this.imgRatio){
+      this.dID.classList.remove('tall');
+      this.dID.classList.add('wide');
+    }else{
+      this.dID.classList.remove('wide');
+      this.dID.classList.add('tall');
+    }
+    console.log(this.dID.className);
+  }
+
+  findRatio(width, height){
+    return width/height;
   }
 
   imagePath = '../../assets/images/illustration/';
@@ -78,7 +127,7 @@ export class IllustrationComponent implements OnInit {
     link: 'https://www.instagram.com/p/BU6EOJjFCqS/?hl=en&taken-by=boobitters',
     title: 'Dream Study',
     description: `This was a study of brush mechanics, primarily a contrast of brush texture, dry brush versus wet brush. One of my favorite pieces of subject matter is the duality of expression versus internal emotion. Being a person who struggles with reading people's faces, one thing that never seems to elude me is the forced, eerie smiles of people suffering from depression.`,
-    date: 20170707,
+    date: 1499385600,
     show: false
   },{
     name: 'bw-crow-study',

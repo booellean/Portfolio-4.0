@@ -13,7 +13,6 @@ import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
 import { DeferLoadModule } from '@trademe/ng-defer-load';
-import { LightboxComponent } from './lightbox/lightbox.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { LightboxComponent } from './lightbox/lightbox.component';
     WebdevComponent,
     DesignComponent,
     AboutComponent,
-    MainComponent,
-    LightboxComponent
+    MainComponent
   ],
   imports: [
     BrowserAnimationsModule,

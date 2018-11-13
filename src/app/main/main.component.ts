@@ -14,18 +14,8 @@ export class MainComponent implements OnInit {
   @Input() wState: AppComponent;
   @Input() aState: AppComponent;
 
-  public lState: boolean = false; //lightbox is closed
-  public lObject: any; //object that will be generated in the lightbox
-
   constructor() {}
 
   ngOnInit() {
   }
-
-  onChangeLightBox(imageObject: any){
-    this.lState ? this.lState = false : this.lState = true;
-    imageObject ? this.lObject = imageObject : imageObject = imageObject;
-    console.log(this.lState + '  ' + this.lObject + '  ' + this.lObject.name);
-  }
-
 }

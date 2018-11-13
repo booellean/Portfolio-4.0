@@ -1,12 +1,14 @@
-<article [@preview-container]="doodles.length+inks.length+colorPencil.length+characterStudy.length">
+<article [@preview-container]="doodles.length+inks.length+colorPencil.length+characterStudy.length" (window:resize)="onResize($event)">
     <h3>Inks</h3>
     <section id="sec-i-inks" class="collection-container">
-        <div class  = "preview-container"
+        <div id="div_ink_{{i}}"
+            class  = "lbclosed"
             *ngFor  = "let ink of inks; let i = index"
-            (click) = "onLightBox(ink)">
-            <figure class = "preview-image">
+            (click) = "onLightBox('ink_' + i)">
+            <figure class = "preview-image"
+                    id = "figure_ink_{{i}}">
               <img  alt   = "{{ink.alt}}"
-                    id    = "{{ink.name}}"
+                    id    = "img_ink_{{i}}"
                     srcset="{{imagePath}}{{ink.name}}-200{{ink.fileType}} 400w,
                             {{imagePath}}{{ink.name}}-400{{ink.fileType}} 600w,
                             {{imagePath}}{{ink.name}}-600{{ink.fileType}} 800w,
@@ -20,16 +22,24 @@
                     src="{{imagePath}}{{ink.name}}-1100{{ink.fileType}}"
                     data-name="{{ink.show}}">
                 </figure>
+                <figcaption
+                    id = "figcaption_ink_{{i}}">
+                    <h2>{{ink.title}}</h2>
+                    <p>{{ink.description}}</p>
+                    <small>{{ink.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                </figcaption>
         </div>
       </section>
       <h3>BW Doodles</h3>
       <section id="sec-i-doodles" class="collection-container">
-        <div class  = "preview-container"
+        <div id="div_doodle_{{i}}"
+            class  = "lbclosed"
             *ngFor  = "let doodle of doodles; let i = index"
-            (click) = "onLightBox(doodle)">
-            <figure class = "preview-image">
+            (click) = "onLightBox('doodle_' + i)">
+            <figure class = "preview-image"
+                    id = "figure_doodle_{{i}}">
               <img  alt   = "{{doodle.alt}}"
-                    id    = "{{doodle.name}}"
+                    id    = "img_doodle_{{i}}"
                     srcset="{{imagePath}}{{doodle.name}}-200{{doodle.fileType}} 400w,
                             {{imagePath}}{{doodle.name}}-400{{doodle.fileType}} 600w,
                             {{imagePath}}{{doodle.name}}-600{{doodle.fileType}} 800w,
@@ -43,52 +53,79 @@
                     src="{{imagePath}}{{doodle.name}}-1100{{doodle.fileType}}"
                     data-name="{{doodle.show}}">
                 </figure>
+                <figcaption
+                    id = "figcaption_doodle_{{i}}">
+                    <h2>{{doodle.title}}</h2>
+                    <p>{{doodle.description}}</p>
+                    <small>{{doodle.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                </figcaption>
         </div>
       </section>
       <h3>Color Doodles</h3>
       <section id="sec-i-pencils" class="collection-container">
-          <div class  = "preview-container"
-              *ngFor  = "let pencil of colorPencil; let i = index"
-              (click) = "onLightBox(pencil)">
-              <figure class="preview-image">
-                <img  alt="{{pencil.alt}}"
-                      id="{{pencil.name}}"
-                      srcset="{{imagePath}}{{pencil.name}}-200{{pencil.fileType}} 400w,
-                              {{imagePath}}{{pencil.name}}-400{{pencil.fileType}} 600w,
-                              {{imagePath}}{{pencil.name}}-600{{pencil.fileType}} 800w,
-                              {{imagePath}}{{pencil.name}}-800{{pencil.fileType}} 1000w,
-                              {{imagePath}}{{pencil.name}}-1100{{pencil.fileType}}"
-                      sizes="(max-width: 300px) 200px,
-                            (max-width: 400px) 400px,
-                            (max-width: 600px) 600px,
-                            (max-width: 800px) 800px,
-                            1100px"
-                      src="{{imagePath}}{{pencil.name}}-1100{{pencil.fileType}}"
-                      data-name="{{pencil.show}}">
-                  </figure>
-          </div>
-        </section>
-        <h3>Character Studies</h3>
-        <section id="sec-i-characters" class="collection-container">
-            <div class  = "preview-container"
-                *ngFor  = "let study of characterStudy; let i = index"
-                (click) = "onLightBox(study)">
-                <figure class = "preview-image">
-                  <img  alt   = "{{study.alt}}"
-                        id    = "{{study.name}}"
-                        srcset="{{imagePath}}{{study.name}}-200{{study.fileType}} 400w,
-                                {{imagePath}}{{study.name}}-400{{study.fileType}} 600w,
-                                {{imagePath}}{{study.name}}-600{{study.fileType}} 800w,
-                                {{imagePath}}{{study.name}}-800{{study.fileType}} 1000w,
-                                {{imagePath}}{{study.name}}-1100{{study.fileType}}"
-                        sizes="(max-width: 300px) 200px,
-                              (max-width: 400px) 400px,
-                              (max-width: 600px) 600px,
-                              (max-width: 800px) 800px,
-                              1100px"
-                        src="{{imagePath}}{{study.name}}-1100{{study.fileType}}"
-                        data-name="{{study.show}}">
-                    </figure>
-            </div>
-          </section>
+        <div id="div_pencil_{{i}}"
+            class  = "lbclosed"
+            *ngFor  = "let pencil of colorPencil; let i = index"
+            (click) = "onLightBox('pencil_' + i)">
+            <figure class = "preview-image"
+                    id = "figure_pencil_{{i}}">
+              <img  alt   = "{{pencil.alt}}"
+                    id    = "img_pencil_{{i}}"
+                    srcset="{{imagePath}}{{pencil.name}}-200{{pencil.fileType}} 400w,
+                            {{imagePath}}{{pencil.name}}-400{{pencil.fileType}} 600w,
+                            {{imagePath}}{{pencil.name}}-600{{pencil.fileType}} 800w,
+                            {{imagePath}}{{pencil.name}}-800{{pencil.fileType}} 1000w,
+                            {{imagePath}}{{pencil.name}}-1100{{pencil.fileType}}"
+                    sizes="(max-width: 300px) 200px,
+                          (max-width: 400px) 400px,
+                          (max-width: 600px) 600px,
+                          (max-width: 800px) 800px,
+                          1100px"
+                    src="{{imagePath}}{{pencil.name}}-1100{{pencil.fileType}}"
+                    data-name="{{pencil.show}}">
+                </figure>
+                <figcaption
+                    id = "figcaption_pencil_{{i}}">
+                    <h2>{{pencil.title}}</h2>
+                    <p>{{pencil.description}}</p>
+                    <small>{{pencil.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                </figcaption>
+        </div>
+      </section>
+      <h3>Character Studies</h3>
+      <section id="sec-i-characters" class="collection-container">
+              <div id="div_study_{{i}}"
+                  class  = "lbclosed"
+                  *ngFor  = "let study of characterStudy; let i = index"
+                  (click) = "onLightBox('study_' + i)">
+                  <figure class = "preview-image"
+                          id = "figure_study_{{i}}">
+                    <img  alt   = "{{study.alt}}"
+                          id    = "img_study_{{i}}"
+                          srcset="{{imagePath}}{{study.name}}-200{{study.fileType}} 400w,
+                                  {{imagePath}}{{study.name}}-400{{study.fileType}} 600w,
+                                  {{imagePath}}{{study.name}}-600{{study.fileType}} 800w,
+                                  {{imagePath}}{{study.name}}-800{{study.fileType}} 1000w,
+                                  {{imagePath}}{{study.name}}-1100{{study.fileType}}"
+                          sizes="(max-width: 300px) 200px,
+                                (max-width: 400px) 400px,
+                                (max-width: 600px) 600px,
+                                (max-width: 800px) 800px,
+                                1100px"
+                          src="{{imagePath}}{{study.name}}-1100{{study.fileType}}"
+                          data-name="{{study.show}}">
+                      </figure>
+                      <figcaption
+                          id = "figcaption_study_{{i}}">
+                          <h2>{{study.title}}</h2>
+                          <p>{{study.description}}</p>
+                          <small>{{study.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                      </figcaption>
+              </div>
+            </section>
 </article>
+<div id="image-toggler" [ngClass]="menu ? 'image-open' : ''" (click)="closeLightBox()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
