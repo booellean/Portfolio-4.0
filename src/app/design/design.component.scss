@@ -1,8 +1,10 @@
 /* ~~variables ~~ */
 $bg-color: #26293a;
-$menu-open-color: red;
-$menu-close-color: black;
+$menu-open-color: #a2a2aa;
+$menu-close-color: #fff;
+$xlbsize: 20vw;
 $lbsize: 30vw;
+$mbsize: 45vw;
 $sbsize: 90vw;
 
 /*courtesy of Rimian and Alex Guerrero, July 1, 2013, from https://stackoverflow.com/questions/12788262/sass-browser-vendor-prefixes#17399532
@@ -25,7 +27,7 @@ $sbsize: 90vw;
   @include vendor-prefix('transform', 'rotate(0deg)');
   @include vendor-prefix('transition', 'all .5s ease-in-out');
   cursor: pointer;
-  z-index: 9999;
+  z-index: 999999;
   opacity: 0;
   pointer-events: none;
 }
@@ -69,20 +71,23 @@ $sbsize: 90vw;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
+  align-content: flex-start;
   div{
     display: flex;
-    width: $lbsize;
-    height: $lbsize;
+    width: $xlbsize;
+    height: $xlbsize;
     overflow: hidden;
     margin: 1rem 0;
     cursor: pointer;
-    @include vendor-prefix('transition', 'width .25s ease-in-out, height .25s ease-in-out, position .25s ease-in-out, height .25s ease-in-out, top .25s ease-in-out, right .25s ease-in-out, display .25s ease-in-out');
+    @include vendor-prefix('box-shadow', '0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.2)');
+    @include vendor-prefix('transition', 'transform .2s ease-in-out, box-shadow .19s ease-in-out');
+    background-color: rgba(0, 0, 0, 0.2);
     figure{
       display: block;
       overflow: hidden;
-      width: $lbsize;
-      height: $lbsize;
+      width: 100%;
+      height: 100%;
       @include vendor-prefix('transition', 'width .25s ease-in-out, height .25s ease-in-out');
       img{
         width: 100%;
@@ -91,19 +96,32 @@ $sbsize: 90vw;
         object-position: center center;
       }
     }
+    figcaption{
+      display: flex;
+      flex-flow: column nowrap;
+      overflow: auto;
+      padding: 2.2rem 1.3rem;
+    }
   }
   .lbclosed{
+    border-radius: 2rem;
     figcaption{
       display: none;
     }
+  }
+  .lbclosed:hover{
+    @include vendor-prefix('transform', 'scale(1.05, 1.05)' );
+    @include vendor-prefix('box-shadow', '0 0 0.3rem 0rem rgba(0, 0, 0, 0.2)');
   }
   .lbopen{
     position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
-    right: 0;
-    padding: 2rem;
+    left: 0;
+    z-index: 999999;
+    background-color: rgba(239, 239, 239, 0.98);
+    margin: 0;
     figure{
       img{
         object-fit: contain;
@@ -115,28 +133,61 @@ $sbsize: 90vw;
     figure{
       width: 70%;
       height: 100%;
+      img{
+        object-fit: contain;
+        object-position: left center;
+      }
     }
     figcaption{
       width: 30%;
       height: 100%;
+      align-items: flex-end;
+      justify-content: space-between;
     }
   }
   .tall{
     flex-flow: column nowrap;
     figure{
       width: 100%;
-      // max-height: 70%;
+      min-height: 70%;
       height: 70%;
       img{
-        object-position: top center;
+        object-position: center center;
         object-fit: contain;
       }
     }
     figcaption{
       width: 100%;
-      height: auto;
-      overflow: auto;
+      height: 30%;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
 
+@media screen and (max-width: 920px){
+  .collection-container{
+    div{
+      width: $lbsize;
+      height: $lbsize;
+    }
+  }
+}
+
+@media screen and (max-width: 675px){
+  .collection-container{
+    div{
+      width: $mbsize;
+      height: $mbsize;
+    }
+  }
+}
+
+@media screen and (max-width: 450px){
+  .collection-container{
+    div{
+      width: $sbsize;
+      height: $sbsize;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+/* ~~variables ~~ */
+$xlbwidth: 20vw;
+$xlbheight: 11.25vw;
+$lbwidth: 30vw;
+$lbheight: 16.876vw;
+$mbwidth: 45vw;
+$mbheight: 25.3125vw;
+$sbwidth: 90vw;
+$sbheight: 50.625vw;
+
+/*courtesy of Rimian and Alex Guerrero, July 1, 2013, from https://stackoverflow.com/questions/12788262/sass-browser-vendor-prefixes#17399532
+/* ~~ vendor prefix formula ~~ */
+
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+/*========================= Image Preview Behaviors and Lightbox Classes ========================*/
+
+.web-collection-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: flex-start;
+  div{
+    display: flex;
+    flex-flow: column nowrap;
+    width: $xlbwidth;
+    height: auto;
+    margin: 1rem 0;
+    cursor: pointer;
+    @include vendor-prefix('transition', 'transform .2s ease-in-out');
+    figure{
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      @include vendor-prefix('box-shadow', '0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.2)');
+      @include vendor-prefix('transition', 'transform .2s ease-in-out, box-shadow .19s ease-in-out');
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+    figcaption{
+      display: flex;
+      flex-flow: column nowrap;
+      overflow: auto;
+      padding: 2.2rem 1.3rem;
+      h2, small{
+        text-align: center;
+      }
+    }
+  }
+  div:hover{
+    @include vendor-prefix('transform', 'scale(1.05, 1.05)' );
+    figure{
+      @include vendor-prefix('box-shadow', '0 0 0.3rem 0rem rgba(0, 0, 0, 0.2)');
+    }
+  }
+}
+
+@media screen and (max-width: 920px){
+  .web-collection-container{
+    div{
+      width: $lbwidth;
+      height: $lbheight;
+    }
+  }
+}
+
+@media screen and (max-width: 675px){
+  .web-collection-container{
+    div{
+      width: $mbwidth;
+      height: $mbheight;
+    }
+  }
+}
+
+@media screen and (max-width: 450px){
+  .web-collection-container{
+    div{
+      width: $sbwidth;
+      height: $sbheight;
+    }
+  }
+}
