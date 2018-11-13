@@ -26,7 +26,7 @@
                     id = "figcaption_ink_{{i}}">
                     <h2>{{ink.title}}</h2>
                     <p>{{ink.description}}</p>
-                    <small>{{ink.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                    <small>&copy;{{ink.date * 1000 | date: 'MM/dd/yyyy'}}</small>
                 </figcaption>
         </div>
       </section>
@@ -57,7 +57,7 @@
                     id = "figcaption_doodle_{{i}}">
                     <h2>{{doodle.title}}</h2>
                     <p>{{doodle.description}}</p>
-                    <small>{{doodle.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                    <small>&copy;{{doodle.date * 1000 | date: 'MM/dd/yyyy'}}</small>
                 </figcaption>
         </div>
       </section>
@@ -88,7 +88,7 @@
                     id = "figcaption_pencil_{{i}}">
                     <h2>{{pencil.title}}</h2>
                     <p>{{pencil.description}}</p>
-                    <small>{{pencil.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                    <small>&copy;{{pencil.date * 1000 | date: 'MM/dd/yyyy'}}</small>
                 </figcaption>
         </div>
       </section>
@@ -119,13 +119,12 @@
                           id = "figcaption_study_{{i}}">
                           <h2>{{study.title}}</h2>
                           <p>{{study.description}}</p>
-                          <small>{{study.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                          <small>&copy;{{study.date * 1000 | date: 'MM/dd/yyyy'}}</small>
                       </figcaption>
               </div>
             </section>
 </article>
 <div id="image-toggler" [ngClass]="menu ? 'image-open' : ''" (click)="closeLightBox()">
-  <span></span>
   <span></span>
   <span></span>
 </div>
