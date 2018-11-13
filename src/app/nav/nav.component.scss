@@ -174,11 +174,15 @@ nav>a.comic-closed{ @include vendor-prefix('transition','height .3s linear .3s, 
     width: 100%;
     height: 25%;
     z-index: 4;
-    @include vendor-prefix('transition','height .3s linear, width .3s linear, clip-path .3s ease-in-out, top .3s linear, bottom .3s linear');
   }
 
   .comic-closed:nth-child(1){ clip-path: polygon(3% 7%, 96% 7%, 96% 93%, 3% 85%); }
   .comic-closed:nth-child(2),
   .comic-closed:nth-child(3){ clip-path: polygon(3% 0%, 96% 7%, 96% 93%, 3% 85%); }
   .comic-closed:nth-child(4){ clip-path: polygon(3% 0%, 96% 7%, 96% 90%, 3% 90%); }
+
+  #nav-design.comic-open{ top: 0; }
+  #nav-about.comic-open{ bottom: 0; }
+
+  nav>a.comic-open, nav>a.comic-closed{ @include vendor-prefix('transition','height .3s linear, width .3s linear, clip-path .3s ease-in-out, top .3s linear, bottom .3s linear'); }
 }
