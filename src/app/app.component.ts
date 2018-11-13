@@ -13,11 +13,11 @@ export class AppComponent {
 
   currentLocation: string; //used for closing the menu, making sure old page stays open
 
-  public iState: boolean = true; //illustration section is closed or cropped
+  public iState: boolean = false; //illustration section is closed or cropped
   public dState: boolean = false; //design section is closed or cropped
   public wState: boolean = false; //webdev section is closed or cropped
   public aState: boolean = false; //about section is closed or cropped
-  public nState: boolean = false; //navbar is open
+  public nState: boolean = true; //navbar is open
 
   onChangeHash(event: Event){
     this.currentLocation = window.location.hash;
