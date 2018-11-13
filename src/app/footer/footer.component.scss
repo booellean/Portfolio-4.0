@@ -1,0 +1,111 @@
+/*========================= Header Text and Icon Behaviors and Queries ==========================*/
+
+/* ~~variables ~~ */
+$bg-color: #21295C;
+$ich-color: #66c7f4;
+$ica-color: #e52d6b;
+$ic-color: #ffffff;
+
+/*courtesy of Rimian and Alex Guerrero, July 1, 2013, from https://stackoverflow.com/questions/12788262/sass-browser-vendor-prefixes#17399532
+/* ~~ vendor prefix formula ~~ */
+
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+/*========================= Header Text and Icon Behaviors and Queries ==========================*/
+
+/*stylings for footer tag excluding form*/
+
+
+#site-footer{
+  padding: 1rem;
+  height: auto;
+  z-index: 5;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-between;
+}
+
+#social-footer{
+  display: flex;
+  ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    list-style: none;
+    li{
+    	font-size: 2em;
+    	margin: 0 1rem;
+    	display: block;
+      transition: all .1s ease-in-out;
+      a{ color: $ic-color; }
+    }
+    li:hover{
+      transform: scale(1.3) translate(-.2em, 0);
+      a{ color: $ich-color; }
+    }
+      li:active{
+        transform: scale(1.5) translate(-.2em, 0);
+        a{ color: $ica-color; }
+    }
+  }
+}
+
+/*Hover and active effects for copyright Link*/
+
+#copyright {
+  font-size: 1.2em;
+  flex-shrink: 0;
+  font-family:'Amaranth', sans-serif;
+  order: 4;
+  p{
+    color: #ffffff;
+    float: left;
+    font-size: 1.2em;
+    font-weight: normal;
+    transition: text-shadow .1s linear;
+  }
+  a{
+    svg{
+      width: 14em;
+      max-width: 100%;
+      float: left;
+      padding-left: .3em;
+      path{
+        fill: #ffffff;
+        transition: filter .1s linear;
+      }
+    }
+  }
+}
+
+#copyright:hover, #copyright:focus{
+  p{ text-shadow: 0 0 .1em $ich-color; }
+  a{
+    svg{
+      filter: drop-shadow(0 0 .15em $ich-color);
+    }
+  }
+}
+#copyright:active{
+  p{ text-shadow: 0 0 .23em $ica-color; }
+  a{
+    svg{
+      filter: drop-shadow(0 0 .23em $ica-color);
+    }
+  }
+}
+
+@media screen and (max-width: 725px){
+  #site-footer{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+  }
+  #social-footer{
+    margin: 0 0 3rem 0;
+  }
+}
