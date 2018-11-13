@@ -25,7 +25,15 @@ html, body{
   overflow-y: scroll;
 }
 
-html{ overflow: hidden; }
+html{
+  overflow: hidden;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#21295c+0,21295c+43,7261a3+100 */
+  background: rgb(33,41,92); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(33,41,92,1) 0%, rgba(33,41,92,1) 43%, rgba(114,97,163,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(33,41,92,1) 0%,rgba(33,41,92,1) 43%,rgba(114,97,163,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(33,41,92,1) 0%,rgba(33,41,92,1) 43%,rgba(114,97,163,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21295c', endColorstr='#7261a3',GradientType=0 ); /* IE6-9 */
+}
 
 /*==================================== Styles for Body Scroll Bar ==================================*/
 
@@ -35,8 +43,8 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb{
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
-  background-color: rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 0 6px rgba(255,255,255, 0.1);
+  background-color: rgba(255,255,255,0.1);
   border-radius: 2em;
 }
 
