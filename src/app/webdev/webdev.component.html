@@ -1,6 +1,6 @@
 <article [@preview-container]="wordpress.length+staticPages.length">
     <h3>Wordpress</h3>
-    <section id="sic-w-wordpress" class="collection-container">
+    <section id="sic-w-wordpress" class="web-collection-container">
         <div class  = "preview-container"
             *ngFor  = "let site of wordpress">
             <a href = "{{site.link}}" target = "_blank">
@@ -20,10 +20,14 @@
                       data-name="{{site.show}}">
                 </figure>
               </a>
+              <figcaption>
+                <h2>{{site.title}}</h2>
+                <small>&copy;{{site.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+              </figcaption>
         </div>
       </section>
       <h3>Static Pages</h3>
-      <section id="sic-w-static" class="collection-container">
+      <section id="sic-w-static" class="web-collection-container">
         <div class  = "preview-container"
             *ngFor  = "let page of staticPages">
             <a href = "{{page.link}}" target = "_blank">
@@ -43,6 +47,10 @@
                       data-name="{{page.show}}">
               </figure>
             </a>
+            <figcaption>
+              <h2>{{page.title}}</h2>
+              <small>&copy;{{page.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+            </figcaption>
         </div>
       </section>
 </article>
