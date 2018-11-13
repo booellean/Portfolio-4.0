@@ -1,4 +1,6 @@
-<article [@preview-container]="banners.length+logos.length+icons.length+layouts.length" (window:resize)="onResize($event)">
+<article    [@preview-container]="banners.length+logos.length+icons.length+layouts.length"
+            (window:resize)="onResize($event)"
+            (window:hashchange)="onChangeHash($event)">
     <h3>Logos</h3>
     <section id="sec-i-logos" class="collection-container">
       <div id="div_logo_{{i}}"
@@ -9,8 +11,7 @@
                   id = "figure_logo_{{i}}">
             <img  alt   = "{{logo.alt}}"
                   id    = "img_logo_{{i}}"
-                  srcset="{{imagePath}}{{logo.name}}-200{{logo.fileType}} 400w,
-                          {{imagePath}}{{logo.name}}-400{{logo.fileType}} 600w,
+                  srcset="{{imagePath}}{{logo.name}}-400{{logo.fileType}} 600w,
                           {{imagePath}}{{logo.name}}-600{{logo.fileType}} 800w,
                           {{imagePath}}{{logo.name}}-800{{logo.fileType}} 1000w,
                           {{imagePath}}{{logo.name}}-1100{{logo.fileType}}"
@@ -40,8 +41,7 @@
                     id = "figure_banner_{{i}}">
               <img  alt   = "{{banner.alt}}"
                     id    = "img_banner_{{i}}"
-                    srcset="{{imagePath}}{{banner.name}}-200{{banner.fileType}} 400w,
-                            {{imagePath}}{{banner.name}}-400{{banner.fileType}} 600w,
+                    srcset="{{imagePath}}{{banner.name}}-400{{banner.fileType}} 600w,
                             {{imagePath}}{{banner.name}}-600{{banner.fileType}} 800w,
                             {{imagePath}}{{banner.name}}-800{{banner.fileType}} 1000w,
                             {{imagePath}}{{banner.name}}-1100{{banner.fileType}}"
@@ -71,8 +71,7 @@
                     id = "figure_icon_{{i}}">
               <img  alt   = "{{icon.alt}}"
                     id    = "img_icon_{{i}}"
-                    srcset="{{imagePath}}{{icon.name}}-200{{icon.fileType}} 400w,
-                            {{imagePath}}{{icon.name}}-400{{icon.fileType}} 600w,
+                    srcset="{{imagePath}}{{icon.name}}-400{{icon.fileType}} 600w,
                             {{imagePath}}{{icon.name}}-600{{icon.fileType}} 800w,
                             {{imagePath}}{{icon.name}}-800{{icon.fileType}} 1000w,
                             {{imagePath}}{{icon.name}}-1100{{icon.fileType}}"
@@ -102,8 +101,7 @@
                       id = "figure_layout_{{i}}">
                 <img  alt   = "{{layout.alt}}"
                       id    = "img_layout_{{i}}"
-                      srcset="{{imagePath}}{{layout.name}}-200{{layout.fileType}} 400w,
-                              {{imagePath}}{{layout.name}}-400{{layout.fileType}} 600w,
+                      srcset="{{imagePath}}{{layout.name}}-400{{layout.fileType}} 600w,
                               {{imagePath}}{{layout.name}}-600{{layout.fileType}} 800w,
                               {{imagePath}}{{layout.name}}-800{{layout.fileType}} 1000w,
                               {{imagePath}}{{layout.name}}-1100{{layout.fileType}}"

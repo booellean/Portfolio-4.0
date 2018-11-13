@@ -8,5 +8,6 @@
 <app-main [iState]="iState"
           [dState]="dState"
           [wState]="wState"
-          [aState]="aState"></app-main>
+          [aState]="aState"
+          (window:hashchange)="onChangeHash($event)"></app-main>
 <app-footer></app-footer>

@@ -21,63 +21,87 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
 })
 export class DesignComponent implements OnInit {
 
-    //listen to the window resizing
-    @HostListener('window:resize', ['$event'])
+  //listen to the window resizing
+  @HostListener('window:resize', ['$event'])
+  @HostListener('window:hashchange', ['$event'])
 
-    //elements of image boxes, to convert to full lightbox display
-    dID: Element;
-    iID: Element;
-    fID: Element;
-    cID: Element;
+  //elements of image boxes, to convert to full lightbox display
+  dID: Element;
+  iID: Element;
+  fID: Element;
+  cID: Element;
 
-    imgRatio: number;
-    winRatio: number;
-    menu: boolean;
+  imgRatio: number;
+  winRatio: number;
+  menu: boolean;
 
-    onLightBox(elID: string){
+  onLightBox(elID: string){
+
+    if(this.detectMobile() && !(window.location.hash.includes('#light-box'))){
+      window.location.hash += '#light-box';
+    }else{
       this.menu = true;
-      this.dID = <HTMLDivElement>document.getElementById('div_'+elID);
-      this.iID = <HTMLImageElement>document.getElementById('img_'+elID);
-
-      this.imgRatio = (this.findRatio(this.iID.clientWidth, this.iID.clientHeight)) + 0.5; //adding amount calculated for wide figcaption
-      this.winRatio = this.findRatio(window.innerWidth, window.innerHeight);
-
-      this.dID.classList.remove('lbclosed');
-      this.dID.classList.add('lbopen');
-
-      if(this.winRatio > this.imgRatio){
-        this.dID.classList.add('wide');
-      }else{
-        this.dID.classList.add('tall');
-      }
-      // console.log(this.imgRatio, this.winRatio);
     }
 
-    closeLightBox(){
-      this.menu= false;
+    this.dID = <HTMLDivElement>document.getElementById('div_'+elID);
+    this.iID = <HTMLImageElement>document.getElementById('img_'+elID);
 
-      this.dID.classList.remove('lbopen');
-      this.dID.classList.remove('wide');
+    this.imgRatio = (this.findRatio(this.iID.clientWidth, this.iID.clientHeight)) + 0.5; //adding amount calculated for wide figcaption
+    this.winRatio = this.findRatio(window.innerWidth, window.innerHeight);
+
+    this.dID.classList.remove('lbclosed');
+    this.dID.classList.add('lbopen');
+
+    if(this.winRatio > this.imgRatio){
+      this.dID.classList.add('wide');
+    }else{
+      this.dID.classList.add('tall');
+    }
+
+  }
+
+  closeLightBox(){
+    this.menu= false;
+
+    this.dID.classList.remove('lbopen');
+    this.dID.classList.remove('wide');
+    this.dID.classList.remove('tall');
+    this.dID.classList.add('lbclosed');
+  }
+
+  onChangeHash(event: Event){
+    if(!(window.location.hash.includes('#light-box'))){
+      this.closeLightBox();
+    }
+  }
+
+  onResize(event){
+    this.winRatio = this.findRatio(window.innerWidth, window.innerHeight);
+    // console.log(this.imgRatio, this.winRatio);
+    if(this.winRatio > this.imgRatio){
       this.dID.classList.remove('tall');
-      this.dID.classList.add('lbclosed');
+      this.dID.classList.add('wide');
+    }else{
+      this.dID.classList.remove('wide');
+      this.dID.classList.add('tall');
     }
+  }
 
-    onResize(event){
-      this.winRatio = this.findRatio(window.innerWidth, window.innerHeight);
-      // console.log(this.imgRatio, this.winRatio);
-      if(this.winRatio > this.imgRatio){
-        this.dID.classList.remove('tall');
-        this.dID.classList.add('wide');
-      }else{
-        this.dID.classList.remove('wide');
-        this.dID.classList.add('tall');
-      }
-      console.log(this.dID.className);
-    }
+  findRatio(width, height){
+    return width/height;
+  }
 
-    findRatio(width, height){
-      return width/height;
-    }
+  detectMobile() {
+    if( navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)
+    ){
+       return true;
+     }
+    else {
+       return false;
+     }
+   }
 
   imagePath = '../../assets/images/design/';
 

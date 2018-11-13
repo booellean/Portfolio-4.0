@@ -23,6 +23,7 @@ export class IllustrationComponent implements OnInit {
 
   //listen to the window resizing
   @HostListener('window:resize', ['$event'])
+  @HostListener('window:hashchange', ['$event'])
 
   //elements of image boxes, to convert to full lightbox display
   dID: Element;
@@ -35,8 +36,13 @@ export class IllustrationComponent implements OnInit {
   menu: boolean;
 
   onLightBox(elID: string){
-    console.log(elID);
-    this.menu = true;
+
+    if(this.detectMobile() && !(window.location.hash.includes('#light-box'))){
+      window.location.hash += '#light-box';
+    }else{
+      this.menu = true;
+    }
+
     this.dID = <HTMLDivElement>document.getElementById('div_'+elID);
     this.iID = <HTMLImageElement>document.getElementById('img_'+elID);
 
@@ -51,7 +57,7 @@ export class IllustrationComponent implements OnInit {
     }else{
       this.dID.classList.add('tall');
     }
-    // console.log(this.imgRatio, this.winRatio);
+
   }
 
   closeLightBox(){
@@ -61,6 +67,12 @@ export class IllustrationComponent implements OnInit {
     this.dID.classList.remove('wide');
     this.dID.classList.remove('tall');
     this.dID.classList.add('lbclosed');
+  }
+
+  onChangeHash(event: Event){
+    if(!(window.location.hash.includes('#light-box'))){
+      this.closeLightBox();
+    }
   }
 
   onResize(event){
@@ -73,12 +85,23 @@ export class IllustrationComponent implements OnInit {
       this.dID.classList.remove('wide');
       this.dID.classList.add('tall');
     }
-    console.log(this.dID.className);
   }
 
   findRatio(width, height){
     return width/height;
   }
+
+  detectMobile() {
+    if( navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)
+    ){
+       return true;
+     }
+    else {
+       return false;
+     }
+   }
 
   imagePath = '../../assets/images/illustration/';
 
