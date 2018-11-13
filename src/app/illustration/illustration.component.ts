@@ -37,6 +37,11 @@ export class IllustrationComponent implements OnInit {
 
   onLightBox(elID: string){
 
+    if(this.dID && this.dID.classList.contains('lbopen')){
+      this.closeLightBox();
+      return;
+    }
+
     if(this.detectMobile() && !(window.location.hash.includes('#light-box'))){
       window.location.hash += '#light-box';
     }else{
