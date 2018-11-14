@@ -1,6 +1,8 @@
-<app-illustration *ngIf="iState"
-                  (changeLightBox) ="onChangeLightBox($event)"></app-illustration>
-<app-design       *ngIf="dState"
-                  (changeLightBox) ="onChangeLightBox($event)"></app-design>
-<app-about        *ngIf="aState"></app-about>
-<app-webdev       *ngIf="wState"></app-webdev>
+<main>
+  <app-illustration *ngIf="iState"
+                    (changeLightBox) ="onChangeLightBox($event)"></app-illustration>
+  <app-design       *ngIf="dState"
+                    (changeLightBox) ="onChangeLightBox($event)"></app-design>
+  <app-about        *ngIf="aState"></app-about>
+  <app-webdev       *ngIf="wState"></app-webdev>
+</main>
