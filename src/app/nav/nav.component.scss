@@ -2,7 +2,7 @@
 
 /* ~~variables ~~ */
 $bg-color: #21295C;
-$menu-open-color: #a2a2aa;;
+$menu-open-color: #a2a2aa;
 $menu-close-color: #ffffff;
 $ich-color: #66c7f4;
 $ica-color: #e52d6b;
@@ -128,7 +128,6 @@ nav>a:hover{
 }
 
 nav>a:active{
-
   span{
     color: $ica-color;
     -webkit-text-stroke: 1px $bg-color;
