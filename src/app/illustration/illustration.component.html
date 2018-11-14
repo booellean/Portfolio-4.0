@@ -27,7 +27,13 @@
                     id = "figcaption_ink_{{i}}">
                     <h2>{{ink.title}}</h2>
                     <p>{{ink.description}}</p>
-                    <small>&copy;{{ink.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                    <section class="optional-links">
+                        <nav>
+                          <a href="{{ink.github}}" target="_blank" *ngIf="ink.github"><i class="fab fa-github"></i></a>
+                          <a href="{{ink.link}}" target="_blank" *ngIf="ink.link"><i class="fas fa-share-square"></i></a>
+                        </nav>
+                        <small>&copy;{{ink.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                    </section>
                 </figcaption>
         </div>
       </section>
@@ -57,7 +63,13 @@
                     id = "figcaption_doodle_{{i}}">
                     <h2>{{doodle.title}}</h2>
                     <p>{{doodle.description}}</p>
-                    <small>&copy;{{doodle.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                    <section class="optional-links">
+                        <nav>
+                          <a href="{{doodle.github}}" target="_blank" *ngIf="doodle.github"><i class="fab fa-github"></i></a>
+                          <a href="{{doodle.link}}" target="_blank" *ngIf="doodle.link"><i class="fas fa-share-square"></i></a>
+                        </nav>
+                        <small>&copy;{{doodle.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                    </section>
                 </figcaption>
         </div>
       </section>
@@ -87,7 +99,13 @@
                     id = "figcaption_pencil_{{i}}">
                     <h2>{{pencil.title}}</h2>
                     <p>{{pencil.description}}</p>
-                    <small>&copy;{{pencil.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                      <section class="optional-links">
+                          <nav>
+                            <a href="{{pencil.github}}" target="_blank" *ngIf="pencil.github"><i class="fab fa-github"></i></a>
+                            <a href="{{pencil.link}}" target="_blank" *ngIf="pencil.link"><i class="fas fa-share-square"></i></a>
+                          </nav>
+                          <small>&copy;{{pencil.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                      </section>
                 </figcaption>
         </div>
       </section>
@@ -117,7 +135,13 @@
                           id = "figcaption_study_{{i}}">
                           <h2>{{study.title}}</h2>
                           <p>{{study.description}}</p>
-                          <small>&copy;{{study.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                          <section class="optional-links">
+                              <nav>
+                                <a href="{{study.github}}" target="_blank" *ngIf="study.github"><i class="fab fa-github"></i></a>
+                                <a href="{{study.link}}" target="_blank" *ngIf="study.link"><i class="fas fa-share-square"></i></a>
+                              </nav>
+                              <small>&copy;{{study.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+                          </section>
                       </figcaption>
               </div>
             </section>
