@@ -27,7 +27,7 @@ $ic-color: #ffffff;
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: space-between;
-  @include vendor-prefix('animation', 'fadein .7s ease-in-out');
+  @include vendor-prefix('animation', 'fadeinfooter .7s ease-in-out');
 }
 
 @keyframes fadeinfooter {
