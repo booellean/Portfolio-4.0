@@ -108,7 +108,7 @@ export class IllustrationComponent implements OnInit {
      }
    }
 
-  imagePath = '../../assets/images/illustration/';
+  imagePath = '/assets/images/illustration/';
 
   doodles =[{
     name: 'doodle-old-lady',

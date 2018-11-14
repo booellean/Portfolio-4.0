@@ -8,7 +8,7 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
 })
 export class AboutComponent implements OnInit {
 
-  imagePath = '../../assets/images/icons/';
+  imagePath = '/assets/images/icons/';
 
   profile = {
     name: 'profile',
