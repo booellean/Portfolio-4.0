@@ -27,6 +27,12 @@ $ic-color: #ffffff;
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: space-between;
+  @include vendor-prefix('animation', 'fadein .3s ease-in-out');
+}
+
+@keyframes fadein {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; }
 }
 
 #social-footer{
