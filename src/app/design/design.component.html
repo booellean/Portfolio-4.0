@@ -1,7 +1,7 @@
 <article    [@preview-container]="banners.length+logos.length+icons.length+layouts.length"
             (window:resize)="onResize($event)"
             (window:hashchange)="onChangeHash($event)">
-    <h3>Logos</h3>
+    <h3 class="section-title">Logos</h3>
     <section id="sec-i-logos" class="collection-container">
       <div id="div_logo_{{i}}"
           class  = "lbclosed"
@@ -31,7 +31,7 @@
               </figcaption>
       </div>
     </section>
-      <h3>Banners</h3>
+      <h3 class="section-title">Banners</h3>
       <section id="sec-i-banners" class="collection-container">
         <div id="div_banner_{{i}}"
             class  = "lbclosed"
@@ -61,7 +61,7 @@
                 </figcaption>
         </div>
       </section>
-      <h3>Icons</h3>
+      <h3 class="section-title">Icons</h3>
       <section id="sec-i-icons" class="collection-container">
         <div id="div_icon_{{i}}"
             class  = "lbclosed"
@@ -91,7 +91,7 @@
                 </figcaption>
         </div>
       </section>
-        <h3>Layouts</h3>
+        <h3 class="section-title">Layouts</h3>
         <section id="sec-i-layouts" class="collection-container">
           <div id="div_layout_{{i}}"
               class  = "lbclosed"
