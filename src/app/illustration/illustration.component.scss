@@ -153,6 +153,18 @@ $ic-color: #48494c;
       height: 100%;
       align-items: flex-end;
       justify-content: space-between;
+      p{
+        font-size: 1.5em;
+        text-align: right;
+      }
+      h2{
+        font-size: 1.7em;
+        text-align: right;
+        padding: 1em 0;
+      }
+      small{
+        font-size: 0.9em;
+      }
     }
   }
   .tall{
