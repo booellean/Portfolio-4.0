@@ -2,9 +2,9 @@
 
 /* ~~variables ~~ */
 $bg-color: #21295C;
-$ich-color: #66c7f4;
+$ich-color: #a2a2aa;
 $ica-color: #e52d6b;
-$ic-color: #ffffff;
+$ic-color: #66c7f4;
 $fc-color: #48494c;
 
 /*courtesy of Rimian and Alex Guerrero, July 1, 2013, from https://stackoverflow.com/questions/12788262/sass-browser-vendor-prefixes#17399532
@@ -23,6 +23,13 @@ $fc-color: #48494c;
     padding: 1rem 2rem;
     font-size: 1.3em;
     @include vendor-prefix('animation', 'fadeinabout 1.4s linear');
+    a{
+      text-decoration: none;
+      color: $ic-color;
+      @include vendor-prefix('transition','color .15s ease-in-out');
+    }
+    a:hover{ color: $ich-color; }
+    a:active{ color: $ica-color; }
   }
   section{
     float: right;
