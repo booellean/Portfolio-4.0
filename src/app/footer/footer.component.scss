@@ -27,10 +27,10 @@ $ic-color: #ffffff;
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: space-between;
-  @include vendor-prefix('animation', 'fadein .3s ease-in-out');
+  @include vendor-prefix('animation', 'fadein .7s ease-in-out');
 }
 
-@keyframes fadein {
+@keyframes fadeinfooter {
   0%    { opacity: 0; }
   100%  { opacity: 1; }
 }
