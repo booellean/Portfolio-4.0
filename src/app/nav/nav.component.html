@@ -5,11 +5,11 @@
 </div>
 <nav [ngClass]="nState ? 'nav-open' : 'nav-closed'">
   <a  id="nav-webdev" [ngClass]="wState ? 'comic-open' : 'comic-closed'"
-      (click)="onOpenPage('webdev')" href="#webdev">WebDev</a>
+      (click)="onOpenPage('webdev')" href="#webdev"><span>WebDev</span></a>
   <a  id="nav-design" [ngClass]="dState ? 'comic-open' : 'comic-closed'"
-      (click)="onOpenPage('design')" href="#design">Design</a>
+      (click)="onOpenPage('design')" href="#design"><span>Design</span></a>
   <a  id="nav-about" [ngClass]="aState ? 'comic-open' : 'comic-closed'"
-      (click)="onOpenPage('about')" href="#about">About</a>
+      (click)="onOpenPage('about')" href="#about"><span>About</span></a>
   <a  id="nav-illustration" [ngClass]="iState ? 'comic-open' : 'comic-closed'"
-      (click)="onOpenPage('illustration')" href="#illustration">Illustration</a>
+      (click)="onOpenPage('illustration')" href="#illustration"><span>Illustration</span></a>
 </nav>
