@@ -14,8 +14,8 @@ export class AppComponent {
   public iState: boolean = false; //illustration section is closed or cropped
   public dState: boolean = false; //design section is closed or cropped
   public wState: boolean = false; //webdev section is closed or cropped
-  public aState: boolean = false; //about section is closed or cropped
-  public nState: boolean = true; //navbar is open
+  public aState: boolean = true; //about section is closed or cropped
+  public nState: boolean = false; //navbar is open
 
   onChangeHash(event: Event){
     this.currentLocation = window.location.hash;
