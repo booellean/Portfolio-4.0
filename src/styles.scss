@@ -35,8 +35,15 @@ html{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21295c', endColorstr='#7261a3',GradientType=0 ); /* IE6-9 */
 }
 
-/*==================================== Styles for Body Scroll Bar ==================================*/
+/*==================================== Styles for Fonts and Sizes ==================================*/
 
+p, h1, h2, h3, h4, h5, h6, li, ul form, label { color: #ffffff; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Roboto Condensed', sans-serif; }
+
+p, a, li, label, textarea, input, small { font-family: 'Dosis', sans-serif; }
+
+/*==================================== Styles for Body Scroll Bar ==================================*/
 
 body::-webkit-scrollbar {
   width: 10px;
@@ -67,4 +74,10 @@ figcaption::-webkit-scrollbar-thumb{
 
 figcaption::-webkit-scrollbar-track{
   background-color: transparent;
+}
+
+/*======================================= Styles for Main Tag =====================================*/
+
+main{
+  min-height: 82vh;
 }
