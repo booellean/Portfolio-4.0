@@ -1,9 +1,12 @@
 /*====================== Nav and Link classes, Animations, and Transitions ======================*/
 
 /* ~~variables ~~ */
-$bg-color: #26293a;
-$menu-open-color: white;
-$menu-close-color: black;
+$bg-color: #21295C;
+$menu-open-color: #a2a2aa;;
+$menu-close-color: #ffffff;
+$ich-color: #66c7f4;
+$ica-color: #e52d6b;
+$ic-color: #ffffff;
 
 /*courtesy of Rimian and Alex Guerrero, July 1, 2013, from https://stackoverflow.com/questions/12788262/sass-browser-vendor-prefixes#17399532
 /* ~~ vendor prefix formula ~~ */
@@ -73,6 +76,7 @@ nav{
   position: fixed;
   overflow: hidden;
   background-color: $bg-color;
+  z-index: 9998;
 }
 
 .nav-open{
@@ -93,12 +97,48 @@ nav{
 }
 
 nav>a{
-  display: inline-block;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   position: fixed;
-  background-image: url('../../assets/test.jpg');
-  background-size: 100vw;
+  background: #ffffff;
+  background-size: cover;
   background-attachment: fixed;
+  background-position: center center;
+  text-decoration: none;
+  span{
+    font-size: 10vw;
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+    color: $bg-color;
+    -webkit-text-stroke: 1px $ic-color;
+    @include vendor-prefix('transition','color .3s ease-in-out, text-stroke .3s ease-in-out');
+  }
 }
+
+nav>a:hover{
+  span{
+    @include vendor-prefix('animation', 'navitemscale .3s ease-in-out');
+    @include vendor-prefix('transform', 'scale(1.04, 1.04)');
+    color: $ich-color;
+    -webkit-text-stroke: 1px $bg-color;
+  }
+}
+
+nav>a:active{
+
+  span{
+    color: $ica-color;
+    -webkit-text-stroke: 1px $bg-color;
+  }
+}
+
+nav>a:nth-child(1){ background-image: url('../../assets/images/backgrounds/webdev-background.png'); } //webdev
+nav>a:nth-child(2){ background-image: url('../../assets/images/backgrounds/design-background.png'); } //design
+nav>a:nth-child(3){ background-image: url('../../assets/images/backgrounds/about-background.jpg'); } //about
+nav>a:nth-child(4){ background-image: url('../../assets/images/backgrounds/illustration-background.jpg'); } //illustration
 
 /*Minor Variance of transitions from opened and closed nav section anchors*/
 nav>a.comic-open{ @include vendor-prefix('transition','height .3s linear, width .3s linear, clip-path .5s ease-in-out'); }
@@ -165,6 +205,10 @@ nav>a.comic-closed{ @include vendor-prefix('transition','height .3s linear .3s, 
     flex-flow: column nowrap;
   }
 
+  nav>a{
+    font-size: 15vw;
+  }
+
   #nav-webdev{ top: 0; }
   #nav-design{ top: 25%; }
   #nav-about{ bottom: 25%; }
@@ -185,4 +229,15 @@ nav>a.comic-closed{ @include vendor-prefix('transition','height .3s linear .3s, 
   #nav-about.comic-open{ bottom: 0; }
 
   nav>a.comic-open, nav>a.comic-closed{ @include vendor-prefix('transition','height .3s linear, width .3s linear, clip-path .3s ease-in-out, top .3s linear, bottom .3s linear'); }
+}
+
+@media screen and (min-width: 1870px){
+  nav>a{
+    font-size: 12em;
+  }
+}
+
+@keyframes navitemscale {
+  0%    { @include vendor-prefix('transform', 'scale(1, 1)'); }
+  100%  { @include vendor-prefix('transform', 'scale(1.04, 1.04)'); }
 }
