@@ -26,7 +26,7 @@ export class WebdevComponent implements OnInit {
   wordpress = [{
     name: 'thinkclink',
     alt: 'Website Link for Thinkclink.com, Smart Investing',
-    fileType: '.jpg',
+    fileType: '.png',
     link: 'https://thinkclink.com/',
     title: 'ThinkClink Smart Investing',
     description: `This is a WordPress theme derived from the twentysixteen theme, with custom code and css. This website was commissioned to combine two of the client's former websites. This involved exporting the WordPress SQL database, creating custom categories from the old sites to control how data was dynamically generated, and transferring ownership of domain.`,

@@ -91,3 +91,20 @@ $sbheight: 50.625vw;
     }
   }
 }
+
+.section-title{
+  text-align: center;
+  font-size: 3em;
+  @include vendor-prefix('animation', 'slideinweb 1.7s cubic-bezier(.61,.18,.69,1), fadeinweb 1.4s linear');
+}
+
+@keyframes slideinweb {
+  0%    { @include vendor-prefix('transform', 'translateX(-100%)'); }
+  100%  { @include vendor-prefix('transform', 'translateX(0%)');  }
+}
+
+@keyframes fadeinweb {
+  0%    { opacity: 0; }
+  99%   { opacity: 0; }
+  100%  { opacity: 1; }
+}

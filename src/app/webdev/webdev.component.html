@@ -1,56 +1,56 @@
-<article [@preview-container]="wordpress.length+staticPages.length">
-    <h3>Wordpress</h3>
-    <section id="sic-w-wordpress" class="web-collection-container">
-        <div class  = "preview-container"
-            *ngFor  = "let site of wordpress">
-            <a href = "{{site.link}}" target = "_blank">
-              <figure class = "preview-image">
-                <img  alt   = "{{site.alt}}"
-                      id    = "{{site.name}}"
-                      srcset="{{imagePath}}{{site.name}}-400{{site.fileType}} 600w,
-                              {{imagePath}}{{site.name}}-600{{site.fileType}} 800w,
-                              {{imagePath}}{{site.name}}-800{{site.fileType}} 1000w,
-                              {{imagePath}}{{site.name}}-1100{{site.fileType}}"
-                      sizes="(max-width: 300px) 200px,
-                            (max-width: 400px) 400px,
-                            (max-width: 600px) 600px,
-                            (max-width: 800px) 800px,
-                            1100px"
-                      src="{{imagePath}}{{site.name}}-1100{{site.fileType}}"
-                      data-name="{{site.show}}">
-                </figure>
-              </a>
-              <figcaption>
-                <h2>{{site.title}}</h2>
-                <small>&copy;{{site.date * 1000 | date: 'MM/dd/yyyy'}}</small>
-              </figcaption>
-        </div>
-      </section>
-      <h3>Static Pages</h3>
-      <section id="sic-w-static" class="web-collection-container">
-        <div class  = "preview-container"
-            *ngFor  = "let page of staticPages">
-            <a href = "{{page.link}}" target = "_blank">
-              <figure class = "preview-image">
-                <img  alt   = "{{page.alt}}"
-                      id    = "{{page.name}}"
-                      srcset="{{imagePath}}{{page.name}}-400{{page.fileType}} 600w,
-                              {{imagePath}}{{page.name}}-600{{page.fileType}} 800w,
-                              {{imagePath}}{{page.name}}-800{{page.fileType}} 1000w,
-                              {{imagePath}}{{page.name}}-1100{{page.fileType}}"
-                      sizes="(max-width: 300px) 200px,
-                            (max-width: 400px) 400px,
-                            (max-width: 600px) 600px,
-                            (max-width: 800px) 800px,
-                            1100px"
-                      src="{{imagePath}}{{page.name}}-1100{{page.fileType}}"
-                      data-name="{{page.show}}">
+<article  [@preview-container]="wordpress.length+staticPages.length">
+  <h3 class="section-title">Wordpress</h3>
+  <section id="sic-w-wordpress" class="web-collection-container">
+      <div class  = "preview-container"
+          *ngFor  = "let site of wordpress">
+          <a href = "{{site.link}}" target = "_blank">
+            <figure class = "preview-image">
+              <img  alt   = "{{site.alt}}"
+                    id    = "{{site.name}}"
+                    srcset="{{imagePath}}{{site.name}}-400{{site.fileType}} 600w,
+                            {{imagePath}}{{site.name}}-600{{site.fileType}} 800w,
+                            {{imagePath}}{{site.name}}-800{{site.fileType}} 1000w,
+                            {{imagePath}}{{site.name}}-1100{{site.fileType}}"
+                    sizes="(max-width: 300px) 200px,
+                          (max-width: 400px) 400px,
+                          (max-width: 600px) 600px,
+                          (max-width: 800px) 800px,
+                          1100px"
+                    src="{{imagePath}}{{site.name}}-1100{{site.fileType}}"
+                    data-name="{{site.show}}">
               </figure>
             </a>
             <figcaption>
-              <h2>{{page.title}}</h2>
-              <small>&copy;{{page.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+              <h2>{{site.title}}</h2>
+              <small>&copy;{{site.date * 1000 | date: 'MM/dd/yyyy'}}</small>
             </figcaption>
-        </div>
-      </section>
+      </div>
+    </section>
+    <h3 class="section-title">Static Pages</h3>
+    <section id="sic-w-static" class="web-collection-container">
+      <div class  = "preview-container"
+          *ngFor  = "let page of staticPages">
+          <a href = "{{page.link}}" target = "_blank">
+            <figure class = "preview-image">
+              <img  alt   = "{{page.alt}}"
+                    id    = "{{page.name}}"
+                    srcset="{{imagePath}}{{page.name}}-400{{page.fileType}} 600w,
+                            {{imagePath}}{{page.name}}-600{{page.fileType}} 800w,
+                            {{imagePath}}{{page.name}}-800{{page.fileType}} 1000w,
+                            {{imagePath}}{{page.name}}-1100{{page.fileType}}"
+                    sizes="(max-width: 300px) 200px,
+                          (max-width: 400px) 400px,
+                          (max-width: 600px) 600px,
+                          (max-width: 800px) 800px,
+                          1100px"
+                    src="{{imagePath}}{{page.name}}-1100{{page.fileType}}"
+                    data-name="{{page.show}}">
+            </figure>
+          </a>
+          <figcaption>
+            <h2>{{page.title}}</h2>
+            <small>&copy;{{page.date * 1000 | date: 'MM/dd/yyyy'}}</small>
+          </figcaption>
+      </div>
+    </section>
 </article>
