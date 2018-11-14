@@ -1,0 +1,118 @@
+/*=========================== About Page Styles and Behaviors and Queries ==========================*/
+
+/* ~~variables ~~ */
+$bg-color: #21295C;
+$ich-color: #66c7f4;
+$ica-color: #e52d6b;
+$ic-color: #ffffff;
+$fc-color: #48494c;
+
+/*courtesy of Rimian and Alex Guerrero, July 1, 2013, from https://stackoverflow.com/questions/12788262/sass-browser-vendor-prefixes#17399532
+/* ~~ vendor prefix formula ~~ */
+
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+/*=========================== About Page Styles and Behaviors and Queries ==========================*/
+
+#about{
+  p{
+    padding: 1rem 2rem;
+    font-size: 1.3em;
+    @include vendor-prefix('animation', 'fadeinabout 1.4s linear');
+  }
+  section{
+    float: right;
+    margin: 0 0 1rem 2rem;
+  }
+    figure{
+      height: 45vh;
+      margin: 0 1rem;
+      overflow: visible;
+      shape-outside: polygon( 10% 0%, 100% 0%, 90% 100%, 0% 100%);
+      @include vendor-prefix('transition', 'clip-path .3s linear, width .3s linear');
+      img{
+        height: 60vh;
+        clip-path: polygon( 10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        @include vendor-prefix('transition', 'clip-path .3s linear, width .3s linear');
+      }
+      @include vendor-prefix('animation', 'slideinabout 1.6s cubic-bezier(.61,.18,.69,1), fadeinabout 1.4s linear');
+    }
+    figcaption{
+      position: relative;
+      height: 15vh;
+      right: 10%;
+      background-color: $ic-color;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      clip-path: polygon( 7% 0%, 100% 0%, 97% 100%, 3% 100%);
+      overflow: hidden;
+      white-space: nowrap;
+      @include vendor-prefix('animation', 'expand 2.1s cubic-bezier(.61,.18,.69,1)');
+      p{
+        color: $fc-color;
+        font-family: 'Courgette', cursive;
+        font-size: 2em;
+        height: 2em;
+        overflow: visible;
+      }
+    }
+}
+
+@keyframes slideinabout {
+  0%    { @include vendor-prefix('transform', 'translateX(-100%)'); }
+  100%  { @include vendor-prefix('transform', 'translateX(0%)');  }
+}
+
+@keyframes fadeinabout {
+  0%    { opacity: 0; }
+  90%   { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
+@keyframes expand{
+  0%    { width: 0; }
+  80%  { width: 0%; }
+  100%  { width: 98%; }
+}
+
+@media screen and (max-width: 875px){
+  #about{
+    section{
+      float: none;
+      margin: 1rem;
+      figure{
+        height: 15vh;
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        img{
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 45%;
+          clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          }
+        }
+        figcaption{
+          position: relative;
+          height: 7vh;
+          right: 0%;
+          width: 100%;
+          background-color: $ic-color;
+          clip-path: polygon( 7% 0%, 100% 0%, 97% 100%, 3% 100%);
+          overflow: hidden;
+          p{
+            height: auto;
+          }
+        }
+    }
+  }
+}
