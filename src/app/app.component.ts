@@ -108,7 +108,7 @@ export class AppComponent {
               this.iState = false;
               this.dState = false;
               this.wState = false;
-              this.aState = false;
+              this.aState = true;
               this.nState = false;
           }
         }else{
