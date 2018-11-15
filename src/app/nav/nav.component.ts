@@ -25,6 +25,7 @@ export class NavComponent implements OnInit {
   }
 
   onOpenPage(page: string){
+    window.location.hash = `#${page}`;
     this.page = page;
     this.changeBoolean.emit(this.page);
   }
