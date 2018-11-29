@@ -113,8 +113,8 @@ nav>a{
     font-size: 10vw;
     font-family: 'Courgette', cursive;
     font-weight: bold;
-    color: $bg-color;
-    -webkit-text-stroke: 1px $ic-color;
+    color: $ich-color;
+    -webkit-text-stroke: 1px $bg-color;
     @include vendor-prefix('transition','color .3s ease-in-out, text-stroke .3s ease-in-out');
   }
 }
