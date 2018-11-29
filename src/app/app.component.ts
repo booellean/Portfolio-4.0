@@ -18,7 +18,7 @@ export class AppComponent {
   public nState: boolean = true; //navbar is open
 
   onChangeHash(event: Event){
-    this.currentLocation = window.location.hash;
+    this.currentLocation = window.location.hash; //change the string to store last page incase menu closes
     switch(this.currentLocation){
       case '#illustration':
         this.iState = true;
@@ -62,8 +62,7 @@ export class AppComponent {
   }
 
   onChangeBoolean(page: string){
-    this.currentLocation = window.location.hash;
-
+    this.currentLocation = window.location.hash; //change the string to store last page incase menu closes
     switch(page){
       case 'hamburger-action':
         if(this.nState){
@@ -127,6 +126,7 @@ export class AppComponent {
         setTimeout( ()=>{
           this.nState = false;
         }, 1000); //Allows animation to play through before closing
+        window.scroll(0,0);
         break;
       case 'design':
         this.iState = false;
@@ -136,6 +136,7 @@ export class AppComponent {
         setTimeout( ()=>{
           this.nState = false;
         }, 1000); //Allows animation to play through before closing
+        window.scroll(0,0);
         break;
       case 'webdev':
         this.iState = false;
@@ -145,6 +146,7 @@ export class AppComponent {
         setTimeout( ()=>{
           this.nState = false;
         }, 1000); //Allows animation to play through before closing
+        window.scroll(0,0);
         break;
       case 'about':
         this.iState = false;
@@ -154,6 +156,7 @@ export class AppComponent {
         setTimeout( ()=>{
           this.nState = false;
         }, 1000); //Allows animation to play through before closing
+        window.scroll(0,0);
         break;
       default:
         this.iState = false;
