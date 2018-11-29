@@ -67,11 +67,11 @@ export class WebdevComponent implements OnInit {
   staticPages = [{
     name: 'poly-entertainment',
     alt: 'Website Link for Poly entertainment',
-    fileType: '.jpg',
+    fileType: '.png',
     github: 'https://github.com/booellean/poly-entertainment',
     link: 'http://www.polyentertainment.com',
     title: 'Poly entertainment',
-    description: 'This is a static website for Poly entertainment. This website incorporates JQuery, canvas animations, hamburger menus, and custom svg graphics.',
+    description: 'This is an Express NodeJS application for a multi-media development company. Although currently static, it will eventually have a blog, videos of upcoming titles, and fully interactive free games.',
     date: 1549584000,
     show: false
   },{

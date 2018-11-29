@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -14,9 +15,21 @@ export class AboutComponent implements OnInit {
     name: 'profile',
     alt: `Profile image of Elle Pope, showing their spectrum behaviors through gesture.`,
     fileType: '.jpg',
-    title: 'Spectrum Extraordinaire',
     show: false
   };
+
+  titles = [
+    'Spectrum Extraordinaire',
+    'Frontend Developer',
+    'Over Thinker',
+    'Former Punk Enthusiast',
+    'Random Title Generator',
+    'Illustrative Exclusionist',
+    'Video Game Dev Hobbyist',
+    'Potential Streamer'
+  ];
+
+  num: number = Math.floor( Math.random() * this.titles.length);
 
   constructor() { }
 
