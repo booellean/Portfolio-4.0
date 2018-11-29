@@ -13,6 +13,8 @@ import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
 import { DeferLoadModule } from '@trademe/ng-defer-load';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { DeferLoadModule } from '@trademe/ng-defer-load';
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    DeferLoadModule
+    DeferLoadModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
