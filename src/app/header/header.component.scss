@@ -30,7 +30,7 @@ header{
   justify-content: flex-start;
   h1{
     font-family: 'Courgette', cursive;
-    padding: .5rem 0 0 0;
+    padding: .5rem 2.5rem 0 0;
     text-shadow: 0 0 .05em $ich-color;
   }
 }
@@ -42,4 +42,17 @@ header{
 @keyframes fadeinheader {
   0%    { opacity: 0; }
   100%  { opacity: 1; }
+}
+
+@media screen and (max-width: 400px){
+  header{
+    h1{
+      font-size: 7.7vw;
+      padding: .5vw 2.5rem 0 0;
+    }
+  }
+  #logo{
+    width: 12.7vw;
+    margin: 3vw;
+  }
 }
