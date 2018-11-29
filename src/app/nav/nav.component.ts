@@ -25,7 +25,7 @@ export class NavComponent implements OnInit {
   }
 
   onOpenPage(page: string){
-    if( page === 'design' || 'about' || 'illustration' || 'webdev'){
+    if( page === 'design' || page === 'about' || page === 'illustration' || page === 'webdev'){
       window.location.hash = `#${page}`;
     }
     this.page = page;
