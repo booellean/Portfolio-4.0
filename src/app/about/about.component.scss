@@ -113,11 +113,21 @@ $fc-color: #48494c;
           height: 7vh;
           right: 0%;
           width: 100%;
-          background-color: $ic-color;
           clip-path: polygon( 7% 0%, 100% 0%, 97% 100%, 3% 100%);
           overflow: hidden;
           p{
             height: auto;
+          }
+        }
+    }
+  }
+}
+@media screen and (max-width: 522px){
+  #about{
+    section{
+        figcaption{
+          p{
+            font-size: 6vw;
           }
         }
     }
