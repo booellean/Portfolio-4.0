@@ -40,3 +40,6 @@ Thumbs.db
 
 # Test Images
 /src/assets/
+
+# Build commands
+build-commands.txt
