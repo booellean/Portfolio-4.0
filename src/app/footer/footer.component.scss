@@ -62,7 +62,7 @@ $ic-color: #ffffff;
 
 /*Hover and active effects for copyright Link*/
 
-#copyright {
+#copyright-information {
   font-size: 1.2em;
   flex-shrink: 0;
   font-family:'Amaranth', sans-serif;
@@ -88,7 +88,7 @@ $ic-color: #ffffff;
   }
 }
 
-#copyright:hover, #copyright:focus{
+#copyright-information:hover, #copyright-information:focus{
   p{ text-shadow: 0 0 .1em $ich-color; }
   a{
     svg{
@@ -96,7 +96,7 @@ $ic-color: #ffffff;
     }
   }
 }
-#copyright:active{
+#copyright-information:active{
   p{ text-shadow: 0 0 .23em $ica-color; }
   a{
     svg{
@@ -116,7 +116,7 @@ $ic-color: #ffffff;
   }
 }
 @media screen and (max-width: 378px){
-  #copyright{
+  #copyright-information{
     p{ font-size: 7vw; }
   }
 }
