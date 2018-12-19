@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class FooterComponent implements OnInit {
 
+  year = new Date().getFullYear();
+
   constructor() { }
 
   ngOnInit() {
