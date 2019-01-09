@@ -33,13 +33,22 @@ export class WebdevComponent implements OnInit {
     date: 1542672000,
     show: false
    },{
-    name: 'trefoil-cultural',
-    alt: 'Website Link for Trefoil Cultural and Environmental',
-    fileType: '.jpg',
-    link: 'https://trefoilcultural.com/',
+    name: 'isaacisms',
+    alt: 'Isaacisms: Insights from a Child',
+    fileType: '.png',
+    link: 'https://isaacisms.com/',
     github: 'https://github.com/booellean/TrefoilCultural',
-    title: 'Trefoil Cultural and Environmental',
-    description: `This is a WordPress theme derived from the twentysixteen theme, with custom code and css. This website was commissioned to combine two of the client's former websites. This involved exporting the WordPress SQL database, creating custom categories from the old sites to control how data was dynamically generated, and transferring ownership of domain.`,
+    title: 'Isaacisms',
+    description: `This is a WordPress theme derived from the twentysixteen theme, with custom code and css. This website was commissioned to combine two of the client's former websites nad host them under Trefoil Cultural and Environmental, however, the client had a change of heart and now the theme is used for one of his sites, Isaacisms. This involved exporting the WordPress SQL database, creating custom categories from the old sites to control how data was dynamically generated, and transferring ownership of domain.`,
+    date: 1517443200,
+    show: false
+   },{
+    name: 'whitewashed-tomb',
+    alt: 'Whitewashed Tomb: a Blog by Richard Rothaus',
+    fileType: '.png',
+    link: 'https://whitewashedtomb.com/',
+    title: 'Whitewashed Tomb',
+    description: `Formerly adjoined to Isaacisms through Trefoil Cultural and Environmental, this site was the leftover data of the exported WordPress SQL database.`,
     date: 1517443200,
     show: false
    },{
