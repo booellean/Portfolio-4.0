@@ -105,6 +105,7 @@ nav>a{
   position: fixed;
   background: #ffffff;
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
   text-decoration: none;
@@ -114,7 +115,7 @@ nav>a{
     font-family: 'Courgette', cursive;
     font-weight: bold;
     color: $ich-color;
-    -webkit-text-stroke: 1px $bg-color;
+    -webkit-text-stroke: .01em $bg-color;
     @include vendor-prefix('transition','color .3s ease-in-out, text-stroke .3s ease-in-out');
   }
 }
