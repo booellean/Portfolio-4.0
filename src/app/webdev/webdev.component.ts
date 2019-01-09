@@ -39,7 +39,7 @@ export class WebdevComponent implements OnInit {
     link: 'https://isaacisms.com/',
     github: 'https://github.com/booellean/TrefoilCultural',
     title: 'Isaacisms',
-    description: `This is a WordPress theme derived from the twentysixteen theme, with custom code and css. This website was commissioned to combine two of the client's former websites nad host them under Trefoil Cultural and Environmental, however, the client had a change of heart and now the theme is used for one of his sites, Isaacisms. This involved exporting the WordPress SQL database, creating custom categories from the old sites to control how data was dynamically generated, and transferring ownership of domain.`,
+    description: `This is a WordPress theme derived from the twentysixteen theme, with custom code and css. This website was commissioned to combine two of the client's former websites and host them under Trefoil Cultural and Environmental, however, the client had a change of heart and now the theme is used for one of his sites, Isaacisms. This involved exporting the WordPress SQL database, creating custom categories from the old sites to control how data was dynamically generated, and transferring ownership of domain.`,
     date: 1517443200,
     show: false
    },{
@@ -80,7 +80,7 @@ export class WebdevComponent implements OnInit {
     github: 'https://github.com/booellean/poly-entertainment',
     link: 'http://www.polyentertainment.com',
     title: 'Poly entertainment',
-    description: 'This is an Express NodeJS application for a multi-media development company. Although currently static, it will eventually have a blog, videos of upcoming titles, and fully interactive free games.',
+    description: 'This is an Express NodeJS application for a multimedia development company. Although currently static, it will eventually have a blog, videos of upcoming titles, and fully interactive free games.',
     date: 1549584000,
     show: false
   },{
@@ -110,7 +110,7 @@ export class WebdevComponent implements OnInit {
     github: 'https://github.com/booellean/8-ball',
     link: 'https://booellean.github.io/8-ball/',
     title: `Magic 8-ball with Integrated UX`,
-    description: `This is a static website that utilizes a user's microphone and gyroscope to create a unique user experiece where they can ask the ball a question and then "shake" for an answer. Some answers are pre-determined based on the question asked, despite if it's asked in an input field or microphone.`,
+    description: `This is a static website that utilizes a user's microphone and gyroscope to create a unique user experience where they can ask the ball a question and then "shake" for an answer. Some answers are pre-determined based on the question asked, despite if it's asked in an input field or microphone.`,
     date: 1489536000,
     show: false
     }];

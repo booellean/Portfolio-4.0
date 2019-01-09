@@ -202,7 +202,7 @@ export class IllustrationComponent implements OnInit {
   description: `A part of the "Wasting Time" album, this cover is made to wrap around the cd case so the arm spills the sands of time upwards and through his hands. The sands can be read as both a metaphor for time or a literal representation of the struggles of cocaine and similar substances. This version of the cover is brown to emulate a dirtier environment than the prior version. This paper also allows for a lot more color contrast and increased depth.`,
   date: 1484870400,
   show: false
-},{
+ },{
   name: 'album-color-3',
   alt: `Album Cover "Wasting Time" by Steven Pope. Black version`,
   fileType: '.jpg',
@@ -211,7 +211,7 @@ export class IllustrationComponent implements OnInit {
   description: `A part of the "Wasting Time" album, this cover is made to wrap around the cd case so the arm spills the sands of time upwards and through his hands. The sands can be read as both a metaphor for time or a literal representation of the struggles of cocaine and similar substances. This version of the cover is black to emulate a a hollowness in drug use. Unlike the previous versions, the contrast is stark and the highlights on the form are the primary focus. Unlike before, the white on black allows the figure to meld into the sands of time, his matter emptying alongside it.`,
   date: 1484870400,
   show: false
-}];
+ }];
 
   characterStudy = [{
     name: 'colors-claire-newman',
@@ -233,7 +233,7 @@ export class IllustrationComponent implements OnInit {
     show: false
   },{
     name: 'colors-eunice-rivers',
-    alt: `Character Study of game character Eunice Rivers, an elderly black nurse who harvors a terrible secret.`,
+    alt: `Character Study of game character Eunice Rivers, an elderly black nurse who harbors a terrible secret.`,
     fileType: '.jpg',
     link: 'https://www.cdc.gov/tuskegee/timeline.htm',
     title: 'Colors - Eunice Rivers',
@@ -242,7 +242,7 @@ export class IllustrationComponent implements OnInit {
     show: false
   },{
     name: 'doodle-bhictoria-bhickie-darlene-beattie',
-    alt: `Character Study of expressions on faces, character Bhickie is a fiesty person`,
+    alt: `Character Study of expressions on faces, character Bhickie is a feisty person`,
     fileType: '.jpg',
     link: 'none',
     title: 'My oh M.I. - Bhickie Darlene Beattie',
@@ -255,7 +255,7 @@ export class IllustrationComponent implements OnInit {
     fileType: '.jpg',
     link: 'none',
     title: 'My oh M.I. - Sage Markus Easom',
-    description: `A character study for a now debunk comic, Sage, or better known as Markus, is a quite and timid person whose generosity is often taken for granted. My oh M.I. is a critical look at mental illness, the causes and effects of it, and how it plays into society. More importantly, My Oh M.I. asks the critical question, what constitutes a mental illness and who has the right to define that?`,
+    description: `A character study for a now debunk comic, Sage, or better known as Markus, is a quiet and timid person whose generosity is often taken for granted. My oh M.I. is a critical look at mental illness, the causes and effects of it, and how it plays into society. More importantly, My Oh M.I. asks the critical question, what constitutes a mental illness and who has the right to define that?`,
     date: 1487548800,
     show: false
   }];
