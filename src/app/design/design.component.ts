@@ -68,10 +68,7 @@ export class DesignComponent implements OnInit {
   closeLightBox(){
     this.menu= false;
 
-    this.dID.classList.remove('lbopen');
-    this.dID.classList.remove('wide');
-    this.dID.classList.remove('tall');
-    this.dID.classList.add('lbclosed');
+    this.dID.className = 'lbclosed';
   }
 
   onChangeHash(event: Event){
@@ -81,8 +78,9 @@ export class DesignComponent implements OnInit {
   }
 
   onResize(event){
+    if (this.dID.classList.contains('lbclosed')) return;
+
     this.winRatio = this.findRatio(window.innerWidth, window.innerHeight);
-    // console.log(this.imgRatio, this.winRatio);
     if(this.winRatio > this.imgRatio){
       this.dID.classList.remove('tall');
       this.dID.classList.add('wide');
