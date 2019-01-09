@@ -136,14 +136,14 @@ nav>a:active{
   }
 }
 
-nav>a:nth-child(1){ background-image: url('/assets/images/backgrounds/webdev-background.png'); } //webdev
-nav>a:nth-child(2){ background-image: url('/assets/images/backgrounds/design-background.png'); } //design
+nav>a:nth-child(1){ background-image: url('/assets/images/backgrounds/webdev-background.jpg'); } //webdev
+nav>a:nth-child(2){ background-image: url('/assets/images/backgrounds/design-background.jpg'); } //design
 nav>a:nth-child(3){ background-image: url('/assets/images/backgrounds/about-background.jpg'); } //about
 nav>a:nth-child(4){ background-image: url('/assets/images/backgrounds/illustration-background.jpg'); } //illustration
 
 /*Minor Variance of transitions from opened and closed nav section anchors*/
-nav>a.comic-open{ @include vendor-prefix('transition','height .3s linear, width .3s linear, clip-path .5s ease-in-out'); }
-nav>a.comic-closed{ @include vendor-prefix('transition','height .3s linear .3s, width .3s linear .3s, clip-path .5s ease-in-out .3s'); }
+nav>a.comic-open{ @include vendor-prefix('transition','height .3s linear, width .3s linear, clip-path .5s ease-in-out, z-index .6s'); }
+nav>a.comic-closed{ @include vendor-prefix('transition','height .3s linear .3s, width .3s linear .3s, clip-path .5s ease-in-out .3s, z-index .6s'); }
 
 #nav-webdev{
   top: 0;
